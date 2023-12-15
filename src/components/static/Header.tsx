@@ -6,8 +6,15 @@ const Header = () => {
     <header className="w-full h-[60px]  flex justify-center items-center">
       <header className="w-full h-[60px] bg-gray-500  flex items-center justify-center fixed">
         <header className="w-[97%] flex items-center justify-between ">
-          <header>
+          <header className="max-sm:hidden">
             <FaBookOpenReader className="text-4xl hover:cursor-pointer" />
+          </header>
+          <header className="hidden max-sm:flex items-center justify-between " >
+            <img src="" alt="" className="w-[50px] h-[50px] rounded-full border mr-2"/>
+            <div className="leading-tight ">
+              <div className="text-[12px] ">Welcome back🎉!</div>
+              <div className="font-bold">Francis Uzoigwe</div>
+            </div>
           </header>
           <div>
             <header className=" flex items-center justify-between max-md:hidden">

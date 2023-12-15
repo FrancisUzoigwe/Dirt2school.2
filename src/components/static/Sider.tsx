@@ -29,7 +29,7 @@ const Sider = () => {
                 onSide();
               }}
             >
-              {!side ? (
+              {side ? (
                 <MdDashboard
                   className="text-3xl hover:cursor-pointer transition-all duration-300 hover:scale-[1.2]"
                   onClick={() => {
