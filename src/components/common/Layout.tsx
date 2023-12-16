@@ -13,7 +13,8 @@ const Layout = () => {
         <div className={`${!uToggle? "w-[150px]" : "w-[60px]"}  h-full max-md:hidden`} >
           <Sider />
         </div>
-        <div className="w-full h-auto bg-gray-400 pl-1">
+        <div className="w-full h-auto bg-green-400 pl-1 flex items-center justify-center">
+          <div className="fixed bottom-20 max-sm:flex hidden">Hello</div>
           <Outlet />
         </div>
       </div>

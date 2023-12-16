@@ -5,6 +5,8 @@ import RegisterScreen from "../pages/auth/RegisterScreen";
 import SigninScreen from "../pages/auth/SigninScreen";
 import FirstLayout from "../components/common/FirstLayout";
 import HomeScreen from "../pages/screen/HomeScreen";
+import ProfileScreen from "../pages/screen/ProfileScreen";
+import SettingScreen from "../pages/screen/SettingScreen";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ export const mainRouter = createBrowserRouter([
       {
         index: true,
         element: <HomeScreen />,
+      },
+      {
+        path: "/profile",
+        element: <ProfileScreen />,
+      },
+      {
+        path: "/settings",
+        element: <SettingScreen />,
       },
     ],
   },
