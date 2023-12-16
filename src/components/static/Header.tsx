@@ -14,9 +14,9 @@ const Header = () => {
           </header>
           <header className="hidden max-sm:flex items-center justify-between ">
             <img
-              src=""
+            // src={vite}
               alt=""
-              className="w-[50px] h-[50px] rounded-full border mr-2"
+              className="w-[50px] h-[50px] rounded-full border mr-2 object-cover"
             />
             <div className="leading-none max-sm:text-white">
               <div className="text-[12px] flex items-center ">
@@ -28,9 +28,9 @@ const Header = () => {
           <div>
             <header className=" flex items-center justify-between max-md:hidden">
               <img
-                src=""
+                // src={vite}
                 alt=""
-                className="w-[50px] h-[50px] rounded-full border"
+                className="w-[50px] h-[50px] rounded-full border object-cover"
               />
               <div className=" ml-2 leading-tight">
                 <div className="font-bold">Francis Uzoigwe</div>
