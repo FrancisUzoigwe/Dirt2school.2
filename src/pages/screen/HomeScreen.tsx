@@ -68,7 +68,7 @@ const HomeScreen = () => {
         <CardI />
         <CardII />
       </div>
-      <div className="font-[Ever] text-3xl font-bold mt-4 text-white">
+      <div className="font-[Ever] max-sm:hidden text-2xl font-bold mt-4 text-white">
         Recent Histories
       </div>
 
