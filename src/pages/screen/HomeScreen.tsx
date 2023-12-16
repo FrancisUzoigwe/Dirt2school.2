@@ -6,6 +6,7 @@ const Card = () => {
   const onEye = () => {
     setClose(!close);
   };
+
   return (
     <div className="w-auto h-[250px] border rounded-xl my-2 mx-1 first-letter: ">
       <div className="m-4">
@@ -61,6 +62,10 @@ const CardII = () => {
 };
 
 const HomeScreen = () => {
+  const [mobileClose, setMobileClose] = useState<boolean>(false);
+  const onMobile = () => {
+    setMobileClose(!mobileClose);
+  };
   return (
     <div className="w-full max-sm:h-[100dvh] h-[calc(100vh-60px)]  flex flex-col items-center">
       <div className="grid max-sm:hidden w-full grid-cols-3 gap-3 max-lg:grid-cols-2">
@@ -76,8 +81,20 @@ const HomeScreen = () => {
         <div className="w-full h-[200px] border rounded-xl">
           <div className="ml-5 mt-5">
             <div className=" font-[Zah] text-white">Total Balance</div>
-            <div className="text-5xl font-bold ml-2 text-white">
-              ₦<span className="ml-1">0.00</span>
+            <div className="text-5xl font-bold ml-2 text-white flex items-center">
+              ₦<span className="ml-1">{mobileClose? <div>0.00</div> : <div>****</div>}</span>
+            </div>
+            <div
+              className="ml-5"
+              onClick={() => {
+                onMobile();
+              }}
+            >
+              {!mobileClose ? (
+                <FaEye className="text-3xl hover:scale-110 transition-all duration-300 hover:cursor-pointer text-white" />
+              ) : (
+                <FaEyeSlash className="text-3xl hover:scale-110 transition-all duration-300 hover:cursor-pointer text-white" />
+              )}
             </div>
           </div>
           {/* <div className="mt-5 flex justify-end">
@@ -89,7 +106,7 @@ const HomeScreen = () => {
         </div>
       </div>
       <div className="w-[96%] flex items-center justify-center flex-col mt-3">
-        <div className="font-[Ever] font-bold max-sm:flex hidden">
+        <div className="font-[Ever] font-bold max-sm:flex hidden text-white">
           Recent Histories
         </div>
       </div>
