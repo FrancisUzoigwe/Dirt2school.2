@@ -63,14 +63,14 @@ const CardII = () => {
       <div className="w-full h-auto flex items-center justify-center">
         <div
           className="mt-5 font-bold underline hover:cursor-pointer fixed text-white font-Poppin"
-          style={{ backdropFilter: "blur(20px)"  }}
+          style={{ backdropFilter: "blur(20px)" }}
         >
           Recent Histories
         </div>
       </div>
-      <div className="mt-3 w-full justify-center items-center h-auto flex flex-col leading-tight ">
-        {data?.map((el: any) => (
-          <div className="w-[95%] h-[40px] mt-2 ">
+      <div className="mt-3 w-full justify-center items-center h-auto flex flex-col leading-none ">
+        {data?.map(() => (
+          <div className="w-[95%] h-[40px] mt-3 ">
             <div className="flex items-center text-[13px]">
               Brought <span className="mx-1">2</span> bags on
               <div className="mx-1 underline text-white font-bold">
@@ -92,6 +92,11 @@ const HomeScreen = () => {
   const onMobile = () => {
     setMobileClose(!mobileClose);
   };
+
+  const [price] = useState<number>(1000 || 2000 || 3000);
+
+  const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
+  const [history, setHistory] = useState<boolean>(false);
   return (
     <div className="w-full max-sm:h-[100dvh] h-[calc(100vh-60px)]  flex flex-col items-center">
       <div className="grid max-sm:hidden w-full grid-cols-3 gap-3 max-lg:grid-cols-2">
@@ -134,14 +139,33 @@ const HomeScreen = () => {
           </div> */}
         </div>
       </div>
-      <div className="w-[96%] flex items-center justify-center flex-col mt-3">
+      <div className="w-[96%] flex items-center justify-center flex-col mt-3 ">
         <div className="font-[Ever] font-bold max-sm:flex hidden text-white">
           Recent Histories
         </div>
-        <div className="flex flex-col items-center mt-5">
-          <IoSettings className="text-9xl max-sm:text-7xl animate-bounce text-white transition-all duration-100 max-sm:mt-3" />
-          <div className=" text-white">Histories would appear here</div>
-        </div>
+        {!history ? (
+          <div className="flex flex-col items-center mt-5">
+            <IoSettings className="text-9xl max-sm:text-7xl animate-bounce text-white transition-all duration-100 max-sm:mt-3" />
+            <div className=" text-white">Histories would appear here</div>
+          </div>
+        ) : (
+          <div className="w-full border overflow-y-auto rounded-xl h-[250px] flex flex-col">
+            {data?.map(() => (
+              <div className="w-[95%] h-[40px] mt-3 flex flex-col items-center">
+                <div className="flex items-center text-[20px] max-sm:text-[11px]">
+                  Brought <span className="mx-1">2</span> bags of pet bottle on
+                  <div className="mx-1 underline text-white font-bold">
+                    12-12-2023
+                  </div>
+                  <div className="mx-1">credit</div>
+                  <div className="ml-1 font-bold">
+                    ₦<span className="ml-1">{price.toLocaleString()}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
