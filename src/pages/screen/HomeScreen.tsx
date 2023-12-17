@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { IoSettings } from "react-icons/io5";
 
 const Card = () => {
   const [close, setClose] = useState<boolean>(false);
@@ -54,9 +55,34 @@ const CardI = () => {
   );
 };
 const CardII = () => {
+  const [price] = useState<number>(1000 || 2000 || 3000);
+
+  const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   return (
-    <div className="w-auto max-lg:hidden h-[250px] border rounded-xl my-2 mx-1 first-letter: ">
-      <div>History</div>
+    <div className="w-auto overflow-y-auto max-lg:hidden h-[250px] border rounded-xl my-2 mx-1 flex-col flex  items-center ">
+      <div className="w-full h-auto flex items-center justify-center">
+        <div
+          className="mt-5 font-bold underline hover:cursor-pointer fixed text-white font-Poppin"
+          style={{ backdropFilter: "blur(20px)"  }}
+        >
+          Recent Histories
+        </div>
+      </div>
+      <div className="mt-3 w-full justify-center items-center h-auto flex flex-col leading-tight ">
+        {data?.map((el: any) => (
+          <div className="w-[95%] h-[40px] mt-2 ">
+            <div className="flex items-center text-[13px]">
+              Brought <span className="mx-1">2</span> bags on
+              <div className="mx-1 underline text-white font-bold">
+                12-12-2023
+              </div>
+              <div className="ml-1 font-bold">
+                ₦<span className="ml-1">{price.toLocaleString()}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -82,7 +108,10 @@ const HomeScreen = () => {
           <div className="ml-5 mt-5">
             <div className=" font-[Zah] text-white">Total Balance</div>
             <div className="text-5xl font-bold ml-2 text-white flex items-center">
-              ₦<span className="ml-1">{mobileClose? <div>0.00</div> : <div>****</div>}</span>
+              ₦
+              <span className="ml-1">
+                {mobileClose ? <div>0.00</div> : <div>****</div>}
+              </span>
             </div>
             <div
               className="ml-5"
@@ -108,6 +137,10 @@ const HomeScreen = () => {
       <div className="w-[96%] flex items-center justify-center flex-col mt-3">
         <div className="font-[Ever] font-bold max-sm:flex hidden text-white">
           Recent Histories
+        </div>
+        <div className="flex flex-col items-center mt-5">
+          <IoSettings className="text-9xl max-sm:text-7xl animate-bounce text-white transition-all duration-100 max-sm:mt-3" />
+          <div className=" text-white">Histories would appear here</div>
         </div>
       </div>
     </div>
