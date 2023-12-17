@@ -56,7 +56,7 @@ const CardI = () => {
 };
 const CardII = () => {
   const [price] = useState<number>(1000 || 2000 || 3000);
-
+  const [history, setHistory] = useState<boolean>(false);
   const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   return (
     <div className="w-auto overflow-y-auto max-lg:hidden h-[250px] border rounded-xl my-2 mx-1 flex-col flex  items-center ">
@@ -69,19 +69,28 @@ const CardII = () => {
         </div>
       </div>
       <div className="mt-3 w-full justify-center items-center h-auto flex flex-col leading-none ">
-        {data?.map(() => (
-          <div className="w-[95%] h-[40px] mt-3 ">
-            <div className="flex items-center text-[13px]">
-              Brought <span className="mx-1">2</span> bags on
-              <div className="mx-1 underline text-white font-bold">
-                12-12-2023
-              </div>
-              <div className="ml-1 font-bold">
-                ₦<span className="ml-1">{price.toLocaleString()}</span>
-              </div>
-            </div>
+        {!history ? (
+          <div className="flex flex-col items-center mt-20">
+            <IoSettings className="text-7xl max-sm:text-7xl animate-bounce text-white transition-all duration-100 max-sm:mt-3" />
+            <div className=" text-white">Histories would appear here</div>
           </div>
-        ))}
+        ) : (
+          <div className="flex flex-col items-center mt-5 w-full">
+            {data?.map(() => (
+              <div className="w-[95%] h-[40px] mt-3 ">
+                <div className="flex items-center text-[13px]">
+                  Brought <span className="mx-1">2</span> bags on
+                  <div className="mx-1 underline text-white font-bold">
+                    12-12-2023
+                  </div>
+                  <div className="ml-1 font-bold">
+                    ₦<span className="ml-1">{price.toLocaleString()}</span>
+                  </div>
+                </div>
+              </div>
+            ))}{" "}
+          </div>
+        )}
       </div>
     </div>
   );
