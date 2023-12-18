@@ -1,23 +1,23 @@
 
-import img from "../../assets/Children.webp"
+// import img from "../../assets/Children.webp"
 
 const AboutUsScreen = () => {
   return (
     <>
     <br/>
     <div id="aboutus" className="w-full flex items-center justify-center">
-        <div className="w-[90%] flex items-center justify-between small:flex-col-reverse">
+        <div className="w-[90%] flex items-center justify-between max-sm:flex-col-reverse">
             
             {/* <div className="w-[50%] small:w-[100%]">
             <img src={img} alt="image" className="w-[100%] " />
             </div> */}
 
-            <div className="w-[100%] small:w-[100%] flex items-center justify-center flex-col">
-                <h2 className="text-[30px] flex small:text-[24px] medium:text-[26px] font-bold ">About Us</h2>
+            <div className="w-[100%] max-sm:w-[100%] flex items-center justify-center flex-col">
+                <h2 className="text-[30px] flex max-sm:text-[24px] max-md:text-[26px] font-bold ">About Us</h2>
                 <br/>
-                <p className="w-[80%] small:w-[100%] medium:w-[100%] text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, corporis illum exercitationem autem cumque iste nisi culpa velit blanditiis non modi reiciendis in labore sed, rerum veniam atque accusantium architecto..</p>
+                <p className="w-[80%] max-sm:w-[100%] max-md:w-[100%] text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, corporis illum exercitationem autem cumque iste nisi culpa velit blanditiis non modi reiciendis in labore sed, rerum veniam atque accusantium architecto..</p>
                 <br/>
-                <p className="w-[80%] small:w-[100%] medium:w-[100%] text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, corporis illum exercitationem autem cumque iste nisi culpa velit blanditiis non modi reiciendis in labore sed, rerum veniam atque accusantium architecto..</p>
+                <p className="w-[80%] max-sm:w-[100%] max-md:w-[100%] text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, corporis illum exercitationem autem cumque iste nisi culpa velit blanditiis non modi reiciendis in labore sed, rerum veniam atque accusantium architecto..</p>
   
                 <br/>
              <div className="flex ">
@@ -29,7 +29,7 @@ const AboutUsScreen = () => {
         transition-colors duration-[1s] before:z-[-1] z-[1]
         hover:text-black border-[1px]
         border-[] bg-[whitesmoke]
-        px-2 h-10 text-[13px] font-medium small:hidden"
+        px-2 h-10 text-[13px] font-medium max-sm:hidden"
                 >
                   Get in touch with us
                 </button>
