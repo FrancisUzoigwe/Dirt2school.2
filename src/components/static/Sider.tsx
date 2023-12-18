@@ -63,10 +63,10 @@ const Sider = () => {
               </div>
             </Link>
             <Link to="/settings">
-            <div className="mt-10 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300">
-              <MdSettings className="text-3xl  " />
-              {!uToggle && <div className="ml-2 font-bold">Edit Profile</div>}
-            </div>
+              <div className="mt-10 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300">
+                <MdSettings className="text-3xl  " />
+                {!uToggle && <div className="ml-2 font-bold">Edit Profile</div>}
+              </div>
             </Link>
             <div className="mt-56 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300">
               <RiLogoutCircleRLine className="text-3xl rotate-180 " />

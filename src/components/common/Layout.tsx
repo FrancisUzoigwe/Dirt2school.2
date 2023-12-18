@@ -19,7 +19,7 @@ const Layout = () => {
           <Sider />
         </div>
         <div className="w-full h-auto bg-green-400 pl-1 flex items-center justify-center">
-          <div className="fixed bottom-20 max-sm:flex hidden w-[50%] border bg-white h-[50px] rounded-full items-center justify-around">
+          <div className="fixed bottom-20 max-sm:flex hidden w-[50%] border bg-white h-[60px] rounded-full items-center justify-around">
             <Link to="/">
               <div className="px-2 py-2 rounded-full bg-blue-600 text-white">
                 <MdDashboard className="text-2xl" />

@@ -1,6 +1,6 @@
 import { FaBookOpenReader } from "react-icons/fa6";
-import { RiMenu3Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import DropDown from "../private/DropDown";
 
 const Header = () => {
   return (
@@ -39,7 +39,7 @@ const Header = () => {
             </header>
           </div>
           <header className="hidden max-md:block max-sm:text-white">
-            <RiMenu3Fill className="text-2xl hover:cursor-pointer transition-all duration-300 hover:scale-125" />
+           <DropDown/>
           </header>
         </header>
       </header>
