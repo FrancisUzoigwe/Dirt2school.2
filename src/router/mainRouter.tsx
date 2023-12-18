@@ -10,7 +10,7 @@ import SettingScreen from "../pages/screen/SettingScreen";
 
 export const mainRouter = createBrowserRouter([
   {
-    path: "/auth",
+    path: "/",
     element: <FirstLayout />,
     children: [
       {
