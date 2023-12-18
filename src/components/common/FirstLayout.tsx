@@ -7,6 +7,7 @@ const FirstLayout = () => {
     <div>
       <FirstHeader />
       <Outlet />
+      <br />
       <Footer />
     </div>
   );
