@@ -23,7 +23,7 @@ const ProfileScreen = () => {
             </div>
             <div className="w-full flex justify-between text-[13px]">
               <div>Profile</div>
-              <Link to="/settings">
+              <Link to="/auth/settings">
                 <div className="flex items-center">
                   Detail
                   <div>
@@ -32,7 +32,7 @@ const ProfileScreen = () => {
                 </div>
               </Link>
             </div>
-            <div className="w-full h-[200px] bg-white mt-4 rounded-md">
+            <div className="w-full h-[180px] bg-white mt-4 rounded-md">
               <div className="px-2 flex items-center justify-between text-[15px] mt-4">
                 <div className="font-bold flex items-center">
                   <div className="text-xl">
@@ -64,8 +64,6 @@ const ProfileScreen = () => {
                 </div>
                 <div className="underline">96B, Ago-Hausa</div>
               </div>
-              <br />
-              <hr />
             </div>
           </div>
         </div>

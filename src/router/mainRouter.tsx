@@ -10,7 +10,7 @@ import SettingScreen from "../pages/screen/SettingScreen";
 
 export const mainRouter = createBrowserRouter([
   {
-    path: "/auth",
+    path: "/",
     element: <FirstLayout />,
     children: [
       {
@@ -29,7 +29,7 @@ export const mainRouter = createBrowserRouter([
     element: <SigninScreen />,
   },
   {
-    path: "/",
+    path: "/auth",
     element: <Layout />,
     children: [
       {
@@ -37,11 +37,11 @@ export const mainRouter = createBrowserRouter([
         element: <HomeScreen />,
       },
       {
-        path: "/profile",
+        path: "/auth/profile",
         element: <ProfileScreen />,
       },
       {
-        path: "/settings",
+        path: "/auth/settings",
         element: <SettingScreen />,
       },
     ],
