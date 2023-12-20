@@ -7,6 +7,7 @@ import { FaRegAddressCard } from "react-icons/fa6";
 const ProfileScreen = () => {
   return (
     <div className="w-full min-h-[100vh] flex justify-center">
+      <div className="max-sm:hidden w-[97%] h-[200px] bg-gray-400">Hello</div>
       <div className="max-sm:flex hidden w-[95%] h-full justify-center">
         <div className="w-full h-full  mt-2 rounded-lg flex flex-col items-center ">
           <div className="flex flex-col items-center w-full">
