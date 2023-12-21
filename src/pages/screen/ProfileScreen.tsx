@@ -1,5 +1,9 @@
 import { CiEdit } from "react-icons/ci";
-import { MdMarkEmailRead } from "react-icons/md";
+import {
+  MdMarkEmailRead,
+  MdAccountBalance,
+  MdManageAccounts,
+} from "react-icons/md";
 import { Link } from "react-router-dom";
 import { BsFillPhoneFill } from "react-icons/bs";
 import { FaRegAddressCard } from "react-icons/fa6";
@@ -7,7 +11,13 @@ import { FaRegAddressCard } from "react-icons/fa6";
 const ProfileScreen = () => {
   return (
     <div className="w-full min-h-[100vh] flex justify-center">
-      <div className="max-sm:hidden w-[97%] h-[200px] bg-gray-400">Hello</div>
+      <div className="max-sm:hidden w-[99%] h-[150px]  flex flex-col items-center ">
+        <div className="flex flex-col items-center mt-14">
+          <div className="w-[150px] h-[150px] rounded-full border border-black"></div>
+          <h1 className="text-2xl font-bold mt-3">Francis Uzoigwe</h1>
+          <div  className="text-[14px]">kossyuzoigwe@gmail.com</div>
+        </div>
+      </div>
       <div className="max-sm:flex hidden w-[95%] h-full justify-center">
         <div className="w-full h-full  mt-2 rounded-lg flex flex-col items-center ">
           <div className="flex flex-col items-center w-full">
@@ -33,7 +43,7 @@ const ProfileScreen = () => {
                 </div>
               </Link>
             </div>
-            <div className="w-full h-[180px] bg-white mt-4 rounded-md">
+            <div className="w-full h-auto my-3 bg-white mt-4 rounded-md">
               <div className="px-2 flex items-center justify-between text-[15px] mt-4">
                 <div className="font-bold flex items-center">
                   <div className="text-xl">
@@ -65,6 +75,30 @@ const ProfileScreen = () => {
                 </div>
                 <div className="underline">96B, Ago-Hausa</div>
               </div>
+              <br />
+              <hr />
+              <div className="px-2 flex items-center justify-between text-[15px] mt-2">
+                <div className="font-bold flex items-center">
+                  <div className="text-xl">
+                    <MdAccountBalance />
+                  </div>
+                  <div className="ml-2">Account Number</div>
+                </div>
+                <div className="underline">1477315759</div>
+              </div>
+              <br />
+              <hr />
+              <div className="px-2 flex items-center justify-between text-[15px] mt-2">
+                <div className="font-bold flex items-center">
+                  <div className="text-xl">
+                    <MdManageAccounts />
+                  </div>
+                  <div className="ml-2">Account Name</div>
+                </div>
+                <div className="underline">Francis Kossyrisochukwu</div>
+              </div>
+              <br />
+              <hr />
             </div>
           </div>
         </div>
