@@ -1,6 +1,7 @@
 import { FaBookOpenReader } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import DropDown from "../private/DropDown";
+import Profile from "./Profile";
 
 const Header = () => {
   return (
@@ -25,19 +26,7 @@ const Header = () => {
               <div className="font-bold">Francis Uzoigwe</div>
             </div>
           </header>
-          <div>
-            <header className=" flex items-center justify-between max-md:hidden">
-              <img
-                // src={vite}
-                alt=""
-                className="w-[50px] h-[50px] rounded-full border object-cover"
-              />
-              <div className=" ml-2 leading-tight">
-                <div className="font-bold">Francis Uzoigwe</div>
-                <div className="text-[13px]">Afara Technical School</div>
-              </div>
-            </header>
-          </div>
+       <Profile/>
           <header className="hidden max-md:block max-sm:text-white">
            <DropDown/>
           </header>

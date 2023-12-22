@@ -60,10 +60,10 @@ const CardII = () => {
   const [history, setHistory] = useState<boolean>(false);
   const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   return (
-    <div className="w-auto overflow-y-auto max-lg:hidden h-[250px] border rounded-xl my-2 mx-1 flex-col flex  items-center ">
-      <div className="w-full h-auto flex items-center justify-center">
+    <div className="w-auto overflow-y-auto max-lg:hidden h-[250px] border rounded-xl my-2 mx-1 flex-col flex  items-center z-[300]">
+      <div className="w-full h-auto flex items-center justify-center relative ">
         <div
-          className="mt-5 font-bold underline hover:cursor-pointer fixed text-white font-Poppin"
+          className="mt-5 font-bold underline hover:cursor-pointer fixed text-white font-Poppin "
           style={{ backdropFilter: "blur(20px)" }}
         >
           Recent Histories

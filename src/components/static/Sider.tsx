@@ -50,19 +50,19 @@ const Sider = () => {
             </div>
           </div>
           <div className="text-white">
-            <Link to="/">
+            <Link to="/auth">
               <div className="mt-10 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300">
                 <RxDashboard className="text-3xl  " />
                 {!uToggle && <div className="ml-2 font-bold">Dashboard</div>}
               </div>
             </Link>
-            <Link to="/profile">
+            <Link to="/auth/profile">
               <div className="mt-10 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300 ">
                 <MdAccountCircle className="text-3xl  " />
                 {!uToggle && <div className="ml-2 font-bold">Profile</div>}
               </div>
             </Link>
-            <Link to="/settings">
+            <Link to="/auth/settings">
               <div className="mt-10 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300">
                 <MdSettings className="text-3xl  " />
                 {!uToggle && <div className="ml-2 font-bold">Edit Profile</div>}
