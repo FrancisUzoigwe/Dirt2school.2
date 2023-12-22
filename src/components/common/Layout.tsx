@@ -19,19 +19,19 @@ const Layout = () => {
           <Sider />
         </div>
         <div className="w-full h-auto bg-green-400 pl-1 flex items-center justify-center">
-          <div className="fixed bottom-20 max-sm:flex hidden w-[50%] border bg-white h-[60px] rounded-full items-center justify-around">
+          <div className="fixed bottom-20 max-sm:flex hidden w-[40%] border bg-white h-[50px] rounded-full items-center justify-around">
             <Link to="/">
-              <div className="px-2 py-2 rounded-full bg-blue-600 text-white">
+              <div className="px-1 py-1 rounded-full bg-blue-600 text-white">
                 <MdDashboard className="text-2xl" />
               </div>
             </Link>
             <Link to="/profile">
-              <div className="px-2 py-2 rounded-full bg-blue-600 text-white">
+              <div className="px-1 py-1 rounded-full bg-blue-600 text-white">
                 <MdAccountCircle className="text-2xl" />
               </div>
             </Link>
             <Link to="/settings">
-              <div className="px-2 py-2 rounded-full bg-blue-600 text-white">
+              <div className="px-1 py-1 rounded-full bg-blue-600 text-white">
                 <MdSettings className="text-2xl" />
               </div>
             </Link>
