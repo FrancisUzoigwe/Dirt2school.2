@@ -27,14 +27,10 @@ const SettingScreen = () => {
     resolver: yupResolver(Schema),
   });
 
-  const onHandleSubmit = handleSubmit(async () => {
-    console.log("Confirm");
+  const onHandleSubmit = handleSubmit(async (data: any) => {
+    const { phoneNumber, address, accNumber, accName } = data;
+    console.log({ phoneNumber, address, accNumber, accName });
   });
-
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [address, setAddress] = useState<string>("");
-  const [accNumber, setAccNumber] = useState<string>("");
-  const [accName, setAccName] = useState<string>("");
 
   const handlePaste = (event: React.ClipboardEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -111,13 +107,9 @@ const SettingScreen = () => {
                   <div className=" w-full h-[30px] mt-1">
                     <input
                       type="text"
+                      {...register("phoneNumber")}
                       className="w-full pl-3 h-full outline-none border-none bg-transparent"
-                      value={phoneNumber}
                       onPaste={handlePaste}
-                      onChange={(e: any) => {
-                        setPhoneNumber(e.target.value);
-                        register("phoneNumber").onChange(e);
-                      }}
                     />
                     {errors.phoneNumber?.message && (
                       <div className="flex w-full justify-end text-xs mt-[2px] font-bold">
@@ -132,12 +124,8 @@ const SettingScreen = () => {
                   </div>
                   <div className=" w-full h-[30px] mt-1">
                     <input
-                      value={address}
                       onPaste={handlePaste}
-                      onChange={(e: any) => {
-                        setAddress(e.target.value);
-                        register("address").onChange(e);
-                      }}
+                      {...register("address")}
                       type="text"
                       className="w-full pl-3 h-full outline-none border-none bg-transparent"
                     />
@@ -154,13 +142,9 @@ const SettingScreen = () => {
                   </div>
                   <div className=" w-full h-[30px] mt-1">
                     <input
-                      value={accNumber}
                       onPaste={handlePaste}
-                      onChange={(e: any) => {
-                        setAccNumber(e.target.value);
-                        register("accNumber").onChange(e);
-                      }}
                       type="text"
+                      {...register("accNumber")}
                       className="w-full pl-3 h-full outline-none border-none bg-transparent"
                     />
                     {errors.accNumber?.message && (
@@ -176,12 +160,8 @@ const SettingScreen = () => {
                   </div>
                   <div className=" w-full h-[30px] mt-1">
                     <input
-                      value={accName}
                       onPaste={handlePaste}
-                      onChange={(e: any) => {
-                        setAccName(e.target.value);
-                        register("accName").onChange(e);
-                      }}
+                      {...register("accName")}
                       type="text"
                       className="w-full  pl-3 h-full outline-none border-none bg-transparent"
                     />
