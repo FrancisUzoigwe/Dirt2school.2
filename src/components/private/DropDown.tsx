@@ -19,14 +19,14 @@ const DropDown = () => {
       <RiMenu3Fill className="text-2xl hover:cursor-pointer transition-all duration-300 hover:scale-125" />
       {dropDown ? (
         <Fade>
-          <div className=" absolute top-7 right-6 px-6 py-2 bg-white rounded-xl text-black">
-            <Link to="/">
+          <div className=" absolute top-7 right-6 px-6 py-2 bg-white rounded-xl text-black ">
+            <Link to="/auth">
               <div className="my-1">Home</div>
             </Link>
-            <Link to="/profile">
+            <Link to="/auth/profile">
               <div className="my-1">Profile</div>
             </Link>
-            <Link to="/settings">
+            <Link to="/auth/settings">
               <div className="my-1">Settings</div>
             </Link>
             <div className="my-1">Logout</div>

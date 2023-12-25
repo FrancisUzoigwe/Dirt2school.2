@@ -7,6 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import { BsFillPhoneFill } from "react-icons/bs";
 import { FaRegAddressCard } from "react-icons/fa6";
+import vite from "../../../public/vite.svg";
 
 const ProfileScreen = () => {
   return (
@@ -14,13 +15,13 @@ const ProfileScreen = () => {
       <div className="max-sm:hidden w-[99%] h-[150px]  flex flex-col ">
         <div className="w-full items-center my-3 h-[200px] flex">
           <img
-            className="w-[120px] h-[120px] ml-3 rounded-full border object-cover"
-            src=""
+            className="w-[120px] h-[120px] ml-3 rounded-full border object-cover bg-white"
+            src={vite}
             alt="Photo"
           />
           <div className="ml-5 text-white">
             <div className="text-3xl font-bold font-[Ever]">
-              Kossyrisochukwu
+              Kossyrisochukwu Francis Uzoigwe
             </div>
             <div className="text-sm font-bold font-[Ever]">
               kossyuzoigwe@gmail.com
