@@ -13,10 +13,17 @@ const ResetPassword = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(Reset) });
+
+  const onHandleSubmit = handleSubmit(async () => {
+    console.log(Reset);
+  });
   return (
     <>
       <div className="w-full h-[calc(100vh-50px)] flex items-center justify-center">
-        <div className="max-sm:w-[80%] sm:w-[50%] bg-white rounded-lg h-[auto] flex flex-col ">
+        <form
+          className="max-sm:w-[80%] sm:w-[50%] bg-white rounded-lg h-[auto] flex flex-col "
+          onSubmit={onHandleSubmit}
+        >
           <div className="font-[Ever] font-bold w-full h-auto flex items-center justify-center my-2 text-xl">
             Reset Password
           </div>
@@ -26,10 +33,13 @@ const ResetPassword = () => {
               <input
                 type="text"
                 className=" w-full h-full outline-none border-b-2 pl-2 "
+                {...register("currentPassword")}
               />
-              <div className="flex w-full justify-end items-center text-red-500">
-                Enter current password
-              </div>
+              {errors.currentPassword?.message && (
+                <div className="flex w-full justify-end items-center text-red-500">
+                  Enter current password
+                </div>
+              )}
             </div>
           </div>
           <div className="ml-3 relative w-[90%]  px-1 py-1">
@@ -38,18 +48,24 @@ const ResetPassword = () => {
               <input
                 type="text"
                 className=" w-full h-full outline-none border-b-2 pl-2 "
+                {...register("newPassword")}
               />
-              <div className="flex w-full justify-end items-center text-red-500">
-                New combination
-              </div>
+              {errors.newPassword?.message && (
+                <div className="flex w-full justify-end items-center text-red-500">
+                  New combination
+                </div>
+              )}
             </div>
           </div>
           <div className="w-full h-auto flex items-center justify-center my-7">
-            <button className="px-4 py-2 rounded-md bg-green-400 text font-[Ever] text-white">
+            <button
+              type="submit"
+              className="px-4 py-2 rounded-md bg-green-400 text font-[Ever] text-white"
+            >
               Reset
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );
