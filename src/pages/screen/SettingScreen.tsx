@@ -74,13 +74,11 @@ const SettingScreen = () => {
     <div className="w-full min-h-[100vh] flex justify-center ">
       <>
         {scroll ? (
+          // Mobile View
           <div className="max-sm:flex hidden w-full justify-center ">
             <div className="w-[97%] flex  text-white flex-col">
               <div className="flex justify-center w-full">
-                <div
-                  className="fixed w-full flex items-center justify-center z-[500] py-[2px] uppercase bg-green-400 text-white font-[Ever] font-bold"
-                 
-                >
+                <div className="fixed w-full flex items-center justify-center z-[300] py-[2px] uppercase bg-green-400 text-white font-[Ever] font-bold">
                   Edit Profile
                 </div>
                 <div className="w-full ">
@@ -236,7 +234,7 @@ const SettingScreen = () => {
                         )}
                       </div>
                     </div>
-                    <div className="mt-10">
+                    <div className="mt-1">
                       <button
                         type="submit"
                         className="font-[Ever] text-sm py-2 px-3 rounded-md bg-white text-green-400"
@@ -247,6 +245,7 @@ const SettingScreen = () => {
                         {!loading ? "   Update Profile" : <IsLoadingButton />}
                       </button>
                     </div>
+                    <div className="mt-36"></div>
                   </form>
                 </div>
               </div>
@@ -415,7 +414,7 @@ const SettingScreen = () => {
                         )}
                       </div>
                     </div>
-                    <div className="mt-10">
+                    <div className="mt-1">
                       <button
                         type="submit"
                         className="font-[Ever] text-sm py-2 px-3 rounded-md bg-white text-green-400"
@@ -426,12 +425,173 @@ const SettingScreen = () => {
                         {!loading ? "   Update Profile" : <IsLoadingButton />}
                       </button>
                     </div>
+                    <div className="mt-36"></div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
         )}
+        {/* Desktop View */}
+        <div className="max-sm:hidden w-full h-auto flex flex-col ">
+          <div className="ml-3 uppercase font-[Ever] text-white font-bold">
+            Edit Profile
+          </div>
+          {/* Image Part */}
+          <div className="w-full h-[150px]  flex items-center ">
+            <div className="relative">
+              <label htmlFor="mobileImage">
+                <div className="absolute bottom-0 right-2 px-[6px] py-[6px] rounded-full bg-black transition-all duration-500 hover:bg-gray-600 hover:cursor-pointer">
+                  <IoCamera className="text-2xl text-white" />
+                </div>
+              </label>
+              <input
+                type="file"
+                id="mobileImage"
+                hidden
+                onChange={onHandleImage}
+              />
+              <img
+                src={avatar ? avatar : image}
+                alt=""
+                className="w-[120px] h-[120px] rounded-full object-cover bg-white ml-3    "
+              />
+            </div>
+          </div>
+          {/* Input Part */}
+          <form
+            className="text-white ml-3 w-[50%] max-md:w-[70%] flex flex-col "
+            onSubmit={onHandleSubmit}
+          >
+            <div className="w-full flex justify-between items-center my-2">
+              <div className="w-[45%] rounded-md my-2 border relative h-[40px] ">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                  Phone:{" "}
+                </div>
+                <div className=" w-full h-[30px] mt-1">
+                  <input
+                    type="text"
+                    onPaste={handlePaste}
+                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
+                    {...register("phoneNumber")}
+                    placeholder=""
+                  />
+                </div>
+                {errors.phoneNumber?.message && (
+                  <div className="flex justify-end text-[12px] mt-[2px] font-bold">
+                    Input your phone
+                  </div>
+                )}
+              </div>
+              <div className="w-[45%] rounded-md my-2 border relative h-[40px] ">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                  Address:{" "}
+                </div>
+                <div className=" w-full h-[30px] mt-1">
+                  <input
+                    type="text"
+                    onPaste={handlePaste}
+                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
+                    {...register("address")}
+                  />
+                </div>
+                {errors.address?.message && (
+                  <div className="flex justify-end text-[12px] mt-[2px] font-bold">
+                    Provide a valid physical address
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="w-full flex justify-between items-center my-2">
+              <div className="w-[45%] rounded-md my-2 border relative h-[40px] ">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                  Account No.:{" "}
+                </div>
+                <div className=" w-full h-[30px] mt-1">
+                  <input
+                    type="text"
+                    onPaste={handlePaste}
+                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
+                    {...register("accNumber")}
+                    placeholder=""
+                  />
+                </div>
+                {errors.accNumber?.message && (
+                  <div className="flex justify-end text-[12px] mt-[2px] font-bold">
+                    Input your account number
+                  </div>
+                )}
+              </div>
+              <div className="w-[45%] rounded-md my-2 border relative h-[40px] ">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                  Account Name.:{" "}
+                </div>
+                <div className=" w-full h-[30px] mt-1">
+                  <input
+                    type="text"
+                    onPaste={handlePaste}
+                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
+                    {...register("accName")}
+                  />
+                </div>
+                {errors.accName?.message && (
+                  <div className="flex justify-end text-[12px] mt-[2px] font-bold">
+                    Account holder name
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="w-full flex justify-between items-center my-2">
+              <div className="w-[45%] rounded-md my-2 border relative h-[40px] ">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                  School.:{" "}
+                </div>
+                <div className=" w-full h-[30px] mt-1">
+                  <input
+                    type="text"
+                    onPaste={handlePaste}
+                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
+                    {...register("schoolName")}
+                    placeholder=""
+                  />
+                </div>
+                {errors.schoolName?.message && (
+                  <div className="flex justify-end text-[12px] mt-[2px] font-bold">
+                    Provide a valid school name
+                  </div>
+                )}
+              </div>
+              <div className="w-[45%] rounded-md my-2 border relative h-[40px] ">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                  Class.:{" "}
+                </div>
+                <div className=" w-full h-[30px] mt-1">
+                  <input
+                    type="text"
+                    maxLength={5}
+                    onPaste={handlePaste}
+                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
+                    {...register("schoolClass")}
+                    placeholder="Eg. SSS2B"
+                  />
+                </div>
+                {errors.schoolClass?.message && (
+                  <div className="flex justify-end text-[12px] mt-[2px] font-bold">
+                    Please specify
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="w-full h-auto flex justify-center items-center mt-5">
+              <button
+                type="submit"
+                className=" bg-white text-green-400 rounded-md px-4 py-2 font-[Ever] text-[14px]"
+              >
+                Update
+              </button>
+            </div>
+          </form>
+        </div>
       </>
     </div>
   );

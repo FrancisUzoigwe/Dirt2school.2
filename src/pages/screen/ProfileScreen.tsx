@@ -7,11 +7,14 @@ import {
 import { Link } from "react-router-dom";
 import { BsFillPhoneFill } from "react-icons/bs";
 import { FaRegAddressCard } from "react-icons/fa6";
+import { SiGoogleclassroom } from "react-icons/si";
 import vite from "../../../public/vite.svg";
+import { IoSchoolSharp } from "react-icons/io5";
 
 const ProfileScreen = () => {
   return (
     <div className="w-full min-h-[100vh] bg-green-400 flex justify-center">
+      {/* Desktop View */}
       <div className="max-sm:hidden w-[99%] h-[150px]  flex flex-col ">
         <div className="w-full items-center my-3 h-[200px] flex">
           <img
@@ -65,7 +68,7 @@ const ProfileScreen = () => {
                   <div className="px-2 border ">Francis Kossyrisochukwu</div>
                 </div>
               </div>
-              <div className="w-full h-auto my-24 flex items-center justify-center">
+              <div className="w-full h-auto mt-24 bg-green-400 flex items-center justify-center">
                 <button className="font-[Ever] text-sm px-3 py-2 rounded-md bg-white text-green-500 hover:cursor-pointer hover:scale-105 transition-all duration-300  ">
                   Edit Profile
                 </button>
@@ -74,6 +77,7 @@ const ProfileScreen = () => {
           </div>
         </div>
       </div>
+      {/* Mobile View */}
       <div className="max-sm:flex hidden w-[95%] h-full justify-center">
         <div className="w-full h-full  mt-2 rounded-lg flex flex-col items-center ">
           <div className="flex flex-col items-center w-full">
@@ -155,7 +159,29 @@ const ProfileScreen = () => {
               </div>
               <br />
               <hr />
+              <div className="px-2 flex items-center justify-between text-[15px] mt-2">
+                <div className="font-bold flex items-center">
+                  <div className="text-xl">
+                    <IoSchoolSharp />
+                  </div>
+                  <div className="ml-2">School</div>
+                </div>
+                <div className="underline">Afara Technical High School</div>
+              </div>
+              <br />
+              <hr />
+              <div className="px-2 flex items-center justify-between text-[15px] mt-2">
+                <div className="font-bold flex items-center">
+                  <div className="text-xl">
+                    <SiGoogleclassroom />
+                  </div>
+                  <div className="ml-2">Class</div>
+                </div>
+                <div className="underline">SSS3A</div>
+              </div>
+              <br />
             </div>
+            <div className="max-sm:mt-36 bg-green-400"></div>
           </div>
         </div>
       </div>

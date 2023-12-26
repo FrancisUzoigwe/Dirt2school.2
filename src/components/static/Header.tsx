@@ -9,7 +9,7 @@ const Header = () => {
       <header className="w-full h-[60px] z-[500] bg-white max-sm:bg-gradient-to-tr from-green-400 via-green-600 to-green-700 flex flex-col   items-center justify-center fixed">
         <header className="w-[97%] flex items-center justify-between ">
           <header className="max-sm:hidden">
-            <Link to="/">
+            <Link to="/auth">
               <FaBookOpenReader className="text-4xl hover:cursor-pointer" />
             </Link>
           </header>
