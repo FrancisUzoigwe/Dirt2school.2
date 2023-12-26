@@ -582,10 +582,10 @@ const SettingScreen = () => {
                 )}
               </div>
             </div>
-            <div className="w-full h-auto flex justify-center items-center mt-5">
+            <div className="w-full h-auto flex  items-center mt-5">
               <button
                 type="submit"
-                className=" bg-white text-green-400 rounded-md px-4 py-2 font-[Ever] text-[14px]"
+                className=" bg-white text-green-400 rounded-md px-4 py-2 font-[Ever] text-[14px] hover:scale-105 transition-all duration-300 hover:shadow-md"
               >
                 Update
               </button>
