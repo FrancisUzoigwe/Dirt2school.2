@@ -8,6 +8,7 @@ import HomeScreen from "../pages/screen/HomeScreen";
 import ProfileScreen from "../pages/screen/ProfileScreen";
 import SettingScreen from "../pages/screen/SettingScreen";
 import Error from "../error/Error";
+import ResetPassword from "../pages/screen/ResetPassword";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const mainRouter = createBrowserRouter([
       {
         path: "/auth/settings",
         element: <SettingScreen />,
+      },
+      {
+        path: "/auth/reset",
+        element: <ResetPassword />,
       },
       
     ],
