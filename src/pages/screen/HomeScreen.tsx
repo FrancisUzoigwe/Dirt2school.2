@@ -58,6 +58,8 @@ const CardI = () => {
 const CardII = () => {
   const [price] = useState<number>(1000 || 2000 || 3000);
   const [history, setHistory] = useState<boolean>(false);
+  console.log(typeof setHistory);
+
   const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   return (
     <div className="w-auto overflow-y-auto max-lg:hidden h-[250px] border rounded-xl my-2 mx-1 flex-col flex  items-center z-[300]">
@@ -107,6 +109,8 @@ const HomeScreen = () => {
 
   const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   const [history, setHistory] = useState<boolean>(false);
+  console.log(typeof setHistory);
+
   return (
     <div className="w-full max-sm:h-[100dvh] h-[100vh]  flex flex-col items-center">
       <div className="grid max-sm:hidden w-full grid-cols-3 gap-3 max-lg:grid-cols-2">

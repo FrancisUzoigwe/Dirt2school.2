@@ -1,4 +1,4 @@
-import img from "../../assets/Children.webp";
+// import img from "../../assets/Children.webp";
 
 const AboutUsScreen = () => {
   return (
