@@ -15,7 +15,7 @@ const Hero = () => {
           className="absolute top-0 right-0 w-[100%] h-[100%] object-cover"
         />
         <div className="absolute top-[40%] left-[5%] text-white ">
-          <h2 className="text-[40px] max-lg:w-[40%] max-sm:w-[90%] max-sm:text-[28px] max-md:w-[60%] px-3 py-2 w-[50%] bg-slate-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-100 rounded-[3px]">
+          <h2 className="text-[40px] max-lg:w-[60%] max-sm:w-[90%] max-sm:text-[28px] max-md:w-[70%] px-3 py-2 w-[50%] bg-slate-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-100 rounded-[3px]">
             Waste Management For A Cleaner Future And Better Education
           </h2>
 
