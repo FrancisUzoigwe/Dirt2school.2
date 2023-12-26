@@ -7,6 +7,7 @@ import FirstLayout from "../components/common/FirstLayout";
 import HomeScreen from "../pages/screen/HomeScreen";
 import ProfileScreen from "../pages/screen/ProfileScreen";
 import SettingScreen from "../pages/screen/SettingScreen";
+import Error from "../error/Error";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -23,7 +24,10 @@ export const mainRouter = createBrowserRouter([
     path: "/register",
     element: <RegisterScreen />,
   },
-
+  {
+    path: "*",
+    element: <Error />,
+  },
   {
     path: "/signin",
     element: <SigninScreen />,
