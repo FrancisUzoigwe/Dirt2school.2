@@ -25,7 +25,6 @@ export const mainRouter = createBrowserRouter([
     path: "/register",
     element: <RegisterScreen />,
   },
- 
 
   {
     path: "/signin",
@@ -48,11 +47,6 @@ export const mainRouter = createBrowserRouter([
         path: "/auth/settings",
         element: <SettingScreen />,
       },
-      {
-        path: "/auth/reset",
-        element: <ResetPassword />,
-      },
-      
     ],
   },
 ]);

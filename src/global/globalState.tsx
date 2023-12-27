@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   uToggle: false,
+  reset: false,
 };
 
 const globalState: any = createSlice({
@@ -14,9 +15,20 @@ const globalState: any = createSlice({
     userChangedToggled: (state: any) => {
       state.uToggle = false;
     },
+    resetToggled: (state: any) => {
+      state.reset = true;
+    },
+    changeResetToggled: (state: any) => {
+      state.reset = false;
+    },
   },
 });
 
-export const { userToggled, userChangedToggled } = globalState.actions;
+export const {
+  userToggled,
+  userChangedToggled,
+  resetToggled,
+  changeResetToggled,
+} = globalState.actions;
 
 export default globalState.reducer;
