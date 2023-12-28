@@ -12,6 +12,7 @@ import { IoSchoolSharp } from "react-icons/io5";
 import ResetPassword from "./ResetPassword";
 import { useDispatch, useSelector } from "react-redux";
 import { resetToggled } from "../../global/globalState";
+import { Link } from "react-router-dom";
 
 const ProfileScreen = () => {
   const resetPage = useSelector((state: any) => state.reset);
@@ -75,9 +76,11 @@ const ProfileScreen = () => {
                   </div>
                 </div>
                 <div className="w-full h-auto mt-24 bg-green-400 flex items-center justify-center">
-                  <button className="font-[Ever] text-sm px-3 py-2 rounded-md bg-white text-green-500 hover:cursor-pointer hover:scale-105 transition-all duration-300  ">
-                    Edit Profile
-                  </button>
+                  <Link to="/auth/settings">
+                    <button className="font-[Ever] text-sm px-3 py-2 rounded-md bg-white text-green-500 hover:cursor-pointer hover:scale-105 transition-all duration-300  ">
+                      Edit Profile
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

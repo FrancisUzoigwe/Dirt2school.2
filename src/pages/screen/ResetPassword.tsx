@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { changeResetToggled } from "../../global/globalState";
+import { motion } from "framer-motion";
 
 const ResetPassword = () => {
   const Reset = yup.object({
@@ -22,13 +23,21 @@ const ResetPassword = () => {
   });
   const dispatch = useDispatch();
 
+  const resetVariant = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: { scale: 1.2, transition: { duration: 0.5 }, opacity: 1 },
+  };
+
   return (
     <>
       <div
-        className="w-full h-full fixed top-0 left-0 flex items-center justify-center"
+        className="w-full z-[100] h-full fixed top-0 left-0 flex items-center justify-center"
         style={{ backdropFilter: "blur(5px)" }}
       >
-        <form
+        <motion.form
+          variants={resetVariant}
+          initial="hidden"
+          animate="visible"
           className="max-sm:w-[80%] sm:w-[50%] shadow-lg bg-white rounded-lg h-[auto] flex flex-col "
           onSubmit={onHandleSubmit}
         >
@@ -76,12 +85,12 @@ const ResetPassword = () => {
           <div className="w-full h-auto flex items-center justify-center my-7">
             <button
               type="submit"
-              className="px-4 py-2 rounded-md bg-green-400 text font-[Ever] text-white"
+              className="w-[90%] py-2 rounded-md bg-green-400 text font-[Ever] text-white"
             >
-              Reset
+              Reset Password
             </button>
           </div>
-        </form>
+        </motion.form>
       </div>
     </>
   );
