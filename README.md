@@ -41,4 +41,4 @@ Volunteer
 Join our movement by volunteering your time and skills. Together, we can make a lasting impact on the lives of these children and the environment.
 
 Contact Us
-Have questions or want to get involved? Contact us at [email@example.com] or visit our website [www.dirt2school.org].
+Have questions or want to get involved? Contact us at [**Coming Soon**] or visit our website [**Coming Soon**].
