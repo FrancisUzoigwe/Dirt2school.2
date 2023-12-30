@@ -4,6 +4,7 @@ const initialState = {
   uToggle: false,
   reset: false,
   student: {} || null,
+  dropDown: false,
 };
 
 const globalState: any = createSlice({
@@ -22,6 +23,12 @@ const globalState: any = createSlice({
     changeResetToggled: (state: any) => {
       state.reset = false;
     },
+    dropped: (state: any) => {
+      state.dropDown = true;
+    },
+    changedDrop: (state: any) => {
+      state.dropDown = false;
+    },
     mainStudent: (state: any, { payload }) => {
       state.student = payload;
     },
@@ -36,6 +43,8 @@ export const {
   userChangedToggled,
   resetToggled,
   changeResetToggled,
+  dropped,
+  changedDrop,
   mainStudent,
   logOutStudent,
 } = globalState.actions;
