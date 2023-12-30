@@ -1,4 +1,3 @@
-import vid from "../../assets/video (2160p).mp4";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";

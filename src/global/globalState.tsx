@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   uToggle: false,
   reset: false,
+  student: {} || null,
 };
 
 const globalState: any = createSlice({
@@ -21,6 +22,12 @@ const globalState: any = createSlice({
     changeResetToggled: (state: any) => {
       state.reset = false;
     },
+    mainStudent: (state: any, { payload }) => {
+      state.student = payload;
+    },
+    logOutStudent: (state: any) => {
+      state.student = null;
+    },
   },
 });
 
@@ -29,6 +36,8 @@ export const {
   userChangedToggled,
   resetToggled,
   changeResetToggled,
+  mainStudent,
+  logOutStudent,
 } = globalState.actions;
 
 export default globalState.reducer;

@@ -9,6 +9,7 @@ import ProfileScreen from "../pages/screen/ProfileScreen";
 import SettingScreen from "../pages/screen/SettingScreen";
 import Error from "../error/Error";
 import ResetPassword from "../pages/screen/ResetPassword";
+import PrivateRoute from "./PrivateRoute";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -33,7 +34,11 @@ export const mainRouter = createBrowserRouter([
 
   {
     path: "/auth",
-    element: <Layout />,
+    element: (
+      <PrivateRoute>
+        <Layout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,

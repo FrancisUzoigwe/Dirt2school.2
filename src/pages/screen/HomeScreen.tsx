@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { IoSettings } from "react-icons/io5";
 import "../../scroll.css";
+import { useDispatch } from "react-redux";
+import { logOutStudent } from "../../global/globalState";
 
 const Card = () => {
   const [close, setClose] = useState<boolean>(false);
@@ -110,6 +112,7 @@ const HomeScreen = () => {
   const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   const [history, setHistory] = useState<boolean>(false);
   console.log(typeof setHistory);
+  const dispatch = useDispatch();
 
   return (
     <div className="w-full max-sm:h-[100dvh] h-[100vh]  flex flex-col items-center">
@@ -125,7 +128,14 @@ const HomeScreen = () => {
       <div className="max-sm:flex hidden w-[96%] mt-3 h-auto items-center  justify-center">
         <div className="w-full h-[200px] border rounded-xl">
           <div className="ml-5 mt-5">
-            <div className=" font-[Zah] text-white">Total Balance</div>
+            <div
+              className=" font-[Zah] text-white"
+              onClick={() => {
+                dispatch(logOutStudent());
+              }}
+            >
+              Total Balance
+            </div>
             <div className="text-5xl font-bold ml-2 text-white flex items-center">
               ₦
               <span className="ml-1">

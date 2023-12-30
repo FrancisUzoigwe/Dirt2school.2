@@ -1,4 +1,3 @@
-import vid from "../../assets/video (2160p).mp4";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -220,7 +219,7 @@ const SigninScreen = () => {
                       className="px-5 py-2 rounded-lg bg-white text-green-500 hover:shadow-lg"
                       type="submit"
                     >
-                      Create account
+                      Login account
                     </button>
                   </div>
                 </motion.form>
