@@ -7,8 +7,6 @@ import FirstLayout from "../components/common/FirstLayout";
 import HomeScreen from "../pages/screen/HomeScreen";
 import ProfileScreen from "../pages/screen/ProfileScreen";
 import SettingScreen from "../pages/screen/SettingScreen";
-import Error from "../error/Error";
-import ResetPassword from "../pages/screen/ResetPassword";
 import PrivateRoute from "./PrivateRoute";
 
 export const mainRouter = createBrowserRouter([
