@@ -11,6 +11,7 @@ import auth from "../../assets/Erased.png";
 import { IoMail } from "react-icons/io5";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useState } from "react";
+import IsLoadingButton from "../../components/private/IsLoadingButton";
 
 const SigninScreen = () => {
   const dispatch = useDispatch();
@@ -40,8 +41,11 @@ const SigninScreen = () => {
   const onShow = () => {
     setShow(!show);
   };
+
+  const [state, setState] = useState<boolean>(false);
   return (
     <>
+      {state && <IsLoadingButton />}
       {resetPage && <ResetPassword />}
       <div className="w-full min-h-[100vh] bg-green-400 flex flex-col">
         {/* Mobile View */}
@@ -154,6 +158,14 @@ const SigninScreen = () => {
                     Not a member ? <div className="ml-[1px]">Signup</div>
                   </div>
                 </Link>
+                <div
+                  className="text-sm flex items-center hover:cursor-pointer"
+                  onClick={() => {
+                    dispatch(resetToggled());
+                  }}
+                >
+                  Forgotten password? <div className="ml-1">Reset Here</div>
+                </div>
                 <motion.form
                   variants={useAnimate}
                   animate="visible"

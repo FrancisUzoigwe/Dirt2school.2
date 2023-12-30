@@ -8,6 +8,7 @@ import HomeScreen from "../pages/screen/HomeScreen";
 import ProfileScreen from "../pages/screen/ProfileScreen";
 import SettingScreen from "../pages/screen/SettingScreen";
 import PrivateRoute from "./PrivateRoute";
+import EmailScreen from "../pages/auth/EmailScreen";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -29,12 +30,16 @@ export const mainRouter = createBrowserRouter([
     path: "/signin",
     element: <SigninScreen />,
   },
+  {
+    path: "/email",
+    element: <EmailScreen />,
+  },
 
   {
     path: "/auth",
     element: (
       // <PrivateRoute>
-        <Layout />
+      <Layout />
       // </PrivateRoute>
     ),
     children: [

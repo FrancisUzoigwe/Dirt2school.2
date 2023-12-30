@@ -25,7 +25,7 @@ const ResetPassword = () => {
 
   const resetVariant = {
     hidden: { opacity: 0, scale: 0 },
-    visible: { scale: 1.2, transition: { duration: 0.5 }, opacity: 1 },
+    visible: { scale: 1, transition: { duration: 0.5 }, opacity: 1 },
   };
 
   return (
@@ -52,7 +52,7 @@ const ResetPassword = () => {
               <AiOutlineCloseCircle />
             </div>
           </div>
-          <div className="ml-3 relative w-[90%]  px-1 py-1">
+          {/* <div className="ml-3 relative w-[90%]  px-1 py-1">
             <div className="ml-2 font-bold">Current Password: </div>
             <div className="w-full">
               <input
@@ -66,18 +66,18 @@ const ResetPassword = () => {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
           <div className="ml-3 relative w-[90%]  px-1 py-1">
-            <div className="ml-2 font-bold">New Password: </div>
-            <div className="w-[85%]">
+            <div className="ml-2 font-bold">Email: </div>
+            <div className="w-full">
               <input
                 type="text"
                 className=" w-full h-full outline-none border-b-2 pl-2 "
                 {...register("newPassword")}
               />
               {errors.newPassword?.message && (
-                <div className="flex w-full justify-end items-center text-red-500">
-                  New combination
+                <div className="flex w-full justify-end items-center text-red-500 text-sm">
+                  Enter your email
                 </div>
               )}
             </div>

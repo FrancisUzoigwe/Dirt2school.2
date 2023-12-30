@@ -1,6 +1,6 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { changedDrop } from "../../global/globalState";
+import { changedDrop, logOutStudent } from "../../global/globalState";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -20,9 +20,9 @@ const DropDown = () => {
         // style={{ backdropFilter: "blur(10px)" }}
       >
         <div className="w-[98%] h-full bg-white rounded-md flex flex-col items-center">
-          <div className="mt-3">
+          <div className="mt-3 ">
             <AiOutlineClose
-              className="text-2xl hover:scale-125 transition-all duration-300"
+              className="text-2xl hover:scale-125 transition-all duration-300 hover:cursor-pointer"
               onClick={() => {
                 dispatch(changedDrop());
               }}
@@ -43,7 +43,12 @@ const DropDown = () => {
               Dashboard
             </div>
           </Link>
-          <div className="my-2 hover:scale-105 transition-all duration-300">
+          <div
+            className="my-2 hover:scale-105 transition-all duration-300 hover:cursor-pointer"
+            onClick={() => {
+              dispatch(logOutStudent());
+            }}
+          >
             Logout
           </div>
         </div>
