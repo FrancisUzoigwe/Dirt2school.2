@@ -44,7 +44,7 @@ const DropDown = () => {
             </div>
           </Link>
           <div
-            className="my-2 hover:scale-105 transition-all duration-300 hover:cursor-pointer"
+            className="my-2 hover:scale-105 transition-all z-[100] duration-300 hover:cursor-pointer"
             onClick={() => {
               dispatch(logOutStudent());
             }}

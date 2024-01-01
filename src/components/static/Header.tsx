@@ -38,7 +38,6 @@ const Header = () => {
               <RiMenu3Fill
                 className="text-2xl hover:cursor-pointer hover:scale-125 transition-all duration-300"
                 onClick={() => {
-                  console.log("Dropped");
                   dispatch(dropped());
                 }}
               />

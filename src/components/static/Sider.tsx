@@ -1,7 +1,11 @@
 import { MdDashboard, MdAccountCircle, MdSettings } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { userChangedToggled, userToggled } from "../../global/globalState";
+import {
+  logOutStudent,
+  userChangedToggled,
+  userToggled,
+} from "../../global/globalState";
 import { RxDashboard } from "react-icons/rx";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { useState } from "react";
@@ -68,7 +72,10 @@ const Sider = () => {
                 {!uToggle && <div className="ml-2 font-bold">Edit Profile</div>}
               </div>
             </Link>
-            <div className="mt-56 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300">
+            <div
+              className="mt-56 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300"
+              onClick={() => dispatch(logOutStudent())}
+            >
               <RiLogoutCircleRLine className="text-3xl rotate-180 " />
               {!uToggle && <div className="ml-2 font-bold">Logout</div>}
             </div>

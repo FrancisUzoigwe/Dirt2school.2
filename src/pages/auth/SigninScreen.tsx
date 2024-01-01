@@ -1,23 +1,25 @@
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import ResetPassword from "../screen/ResetPassword";
-import { resetToggled } from "../../global/globalState";
+import { mainStudent, resetToggled } from "../../global/globalState";
 import { motion } from "framer-motion";
 import auth from "../../assets/Erased.png";
 import { IoMail } from "react-icons/io5";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useState } from "react";
 import IsLoadingButton from "../../components/private/IsLoadingButton";
+import { loginApi } from "../../apis/studentAuthApi";
 
 const SigninScreen = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const resetPage = useSelector((state: any) => state.reset);
 
-  const Register = yup.object({
+  const Signin = yup.object({
     email: yup.string().required(),
     password: yup.string().required(),
   });
@@ -26,10 +28,22 @@ const SigninScreen = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(Register) });
+  } = useForm({ resolver: yupResolver(Signin) });
 
-  const onHandleSubmit = handleSubmit(async () => {
-    console.log("Normally");
+  const [state, setState] = useState<boolean>(false);
+
+  const onHandleSubmit = handleSubmit(async (data) => {
+    setState(true);
+    const { email, password } = data;
+    loginApi({ email, password })
+      .then((cred: any) => {
+        dispatch(mainStudent(cred));
+        console.log(cred);
+      })
+      .then(() => {
+        navigate("/auth");
+        setState(false);
+      });
   });
 
   const useAnimate = {
@@ -42,110 +56,11 @@ const SigninScreen = () => {
     setShow(!show);
   };
 
-  const [state, setState] = useState<boolean>(false);
   return (
     <>
-      {state && <IsLoadingButton />}
       {resetPage && <ResetPassword />}
       <div className="w-full min-h-[100vh] bg-green-400 flex flex-col">
-        {/* Mobile View */}
-        <div className="max-sm:flex hidden w-full h-auto flex-col items-center">
-          <div
-            className="w-[98%]  my-[6px] h-[250px] rounded-lg"
-            style={{
-              backgroundImage: `url(${auth})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            {/* <video
-              src={vid}
-              className="w-full h-full object-cover rounded-lg"
-              autoPlay
-              muted
-              loop
-              controls={false}
-            /> */}
-          </div>
-          {/* <div className="text-white font-[Ever] font-bold">Get Started</div> */}
-          <div className="text-white font-[Ever] font-bold text-2xl my-1">
-            Signin
-          </div>
-          <motion.form
-            variants={useAnimate}
-            animate="visible"
-            initial="hidden"
-            className="w-full h-auto flex flex-col items-center "
-            onSubmit={onHandleSubmit}
-          >
-            <div className="flex items-center my-4 justify-between w-[95%]">
-              <div className="w-[48%] text-white rounded-md my-2 border relative h-[50px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
-                  Email.:
-                </div>
-                <div className=" w-full h-[35px] mt-1">
-                  <input
-                    type="text"
-                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
-                    {...register("email")}
-                    placeholder=""
-                  />
-                </div>
-
-                {errors.email?.message && (
-                  <div className="flex justify-end text-[12px] mt-[10px] font-bold">
-                    Input your firstname
-                  </div>
-                )}
-              </div>
-              <div className="w-[48%] text-white rounded-md my-2 border relative h-[50px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
-                  Password.:
-                </div>
-                <div className=" w-full h-[35px] mt-1">
-                  <input
-                    type="text"
-                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
-                    {...register("password")}
-                    placeholder=""
-                  />
-                </div>
-                {errors.password?.message && (
-                  <div className="flex justify-end text-[12px] mt-[10px] font-bold">
-                    Input your last name
-                  </div>
-                )}
-              </div>
-            </div>
-            <div className="mt-5 w-full flex justify-center items-center">
-              <button
-                type="submit"
-                className="w-[90%] py-2 rounded-md bg-white text-green-400 font-[Ever] hover:shadow-lg transition-all duration-300"
-              >
-                Signin
-              </button>
-            </div>
-            <div
-              className="mt-4 flex items-center w-[93%] justify-end hover:cursor-pointer "
-              onClick={() => {
-                dispatch(resetToggled());
-              }}
-            >
-              <div className="flex justify-end items-center ">
-                Forgotten password?
-              </div>
-              <div className="ml-1 text-red-500">Reset Here</div>
-            </div>
-            <div className="flex items-center  text-white">
-              Don't have an account?{" "}
-              <Link to="/register ">
-                <div className="ml-2 text-red-600 underline">Signup</div>
-              </Link>
-            </div>
-          </motion.form>
-        </div>
-        {/* Desktop Screen */}
-        <div className="max-sm:hidden w-full bg-gradient-to-tr from-green-500 via-green-700 to-green-950 h-[100vh] flex justify-center items-center">
+        <div className=" w-full bg-gradient-to-tr from-green-500 via-green-700 to-green-950 h-[100vh] flex justify-center items-center">
           <div className="w-full h-[100vh] justify-between items-center flex ">
             <div className="w-[55%] max-md:w-[90%] h-full flex items-center justify-end">
               <div className="w-[90%] h-[60%] text-white  flex flex-col  ">
@@ -231,7 +146,7 @@ const SigninScreen = () => {
                       className="px-5 py-2 rounded-lg bg-white text-green-500 hover:shadow-lg"
                       type="submit"
                     >
-                      Login account
+                      {state ? <IsLoadingButton /> : "Signin Account"}
                     </button>
                   </div>
                 </motion.form>

@@ -38,7 +38,7 @@ export const mainRouter = createBrowserRouter([
   {
     path: "/auth",
     element: (
-      // <PrivateRoute>
+      <PrivateRoute>
       <Layout />
       // </PrivateRoute>
     ),

@@ -5,13 +5,17 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { MdContactMail } from "react-icons/md";
-import { IoMail } from "react-icons/io5";
+import { IoCamera, IoMail } from "react-icons/io5";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import auth from "../../assets/Erased.png";
+import { useNavigate } from "react-router-dom";
+import vite from "../../../public/vite.svg";
 import IsLoadingButton from "../../components/private/IsLoadingButton";
 import { registerApi } from "../../apis/studentAuthApi";
 
 const RegisterScreen = () => {
+  const navigate = useNavigate();
+
   const Register = yup.object({
     firstName: yup.string().required(),
     lastName: yup.string().required(),
@@ -25,11 +29,23 @@ const RegisterScreen = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(Register) });
 
-  const [loading, setLoading] = useState<boolean>(false);
+  const [state, setState] = useState<boolean>(false);
 
-  const onHandleSubmit = handleSubmit(async () => {
-    setLoading(true);
-    // registerApi().th
+  const onHandleSubmit = handleSubmit(async (data) => {
+    setState(true);
+    const { firstName, email, password, lastName } = data;
+    const myForm = new FormData();
+    myForm.append("firstName", firstName);
+    myForm.append("lastName", lastName);
+    myForm.append("email", email);
+    myForm.append("password", password);
+    myForm.append("avatar", image);
+
+    registerApi(myForm).then((res: any) => {
+      console.log("Checking response: ", res);
+      navigate("/signin");
+    });
+    setState(false);
   });
 
   const useAnimate = {
@@ -41,135 +57,49 @@ const RegisterScreen = () => {
   const onShow = () => {
     setShow(!show);
   };
+
+  const [image, setImage] = useState<string>("");
+  const [avatar, setAvatar] = useState(vite);
+  const onHandleImage = (e: any) => {
+    const local = e.target.files[0];
+    const save = URL.createObjectURL(local);
+    setAvatar(save);
+    setImage(local);
+  };
+
   return (
     <>
-      {loading && <IsLoadingButton />}
+      {state && <IsLoadingButton />}
       <div className="w-full min-h-[100vh] bg-green-400 flex flex-col">
-        {/* Mobile View */}
-        <div className="max-sm:flex hidden w-full h-auto flex-col items-center">
-          <div
-            className="w-[98%]  my-[6px] h-[250px] rounded-lg"
-            style={{
-              backgroundImage: `url(${auth})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></div>
-          <div className="text-white font-[Ever] font-bold text-2xl my-1">
-            Register
-          </div>
-          <motion.form
-            variants={useAnimate}
-            initial="hidden"
-            animate="visible"
-            className="w-full h-auto flex flex-col items-center "
-            onSubmit={onHandleSubmit}
-          >
-            <div className="flex items-center my-4 justify-between w-[95%]">
-              <div className="w-[48%] text-white rounded-md my-2 border relative h-[50px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
-                  First Name.:
-                </div>
-                <div className=" w-full h-[35px] mt-1">
-                  <input
-                    type="text"
-                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
-                    {...register("firstName")}
-                    placeholder=""
-                  />
-                </div>
-
-                {errors.firstName?.message && (
-                  <div className="flex justify-end text-[12px] mt-[10px] font-bold">
-                    Input your firstname
-                  </div>
-                )}
-              </div>
-              <div className="w-[48%] text-white rounded-md my-2 border relative h-[50px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
-                  Last Name.:
-                </div>
-                <div className=" w-full h-[35px] mt-1">
-                  <input
-                    type="text"
-                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
-                    {...register("lastName")}
-                    placeholder=""
-                  />
-                </div>
-
-                {errors.lastName?.message && (
-                  <div className="flex justify-end text-[12px] mt-[10px] font-bold">
-                    Input your last name
-                  </div>
-                )}
-              </div>
-            </div>
-            <div className="flex items-center my-4 justify-between w-[95%]">
-              <div className="w-[48%] text-white rounded-md my-2 border relative h-[50px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
-                  Email.:
-                </div>
-                <div className=" w-full h-[35px] mt-1">
-                  <input
-                    type="text"
-                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
-                    {...register("email")}
-                    placeholder=""
-                  />
-                </div>
-
-                {errors.email?.message && (
-                  <div className="flex justify-end text-[12px] mt-[10px] font-bold">
-                    Input your firstname
-                  </div>
-                )}
-              </div>
-              <div className="w-[48%] text-white rounded-md my-2 border relative h-[50px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
-                  Password.:
-                </div>
-                <div className=" w-full h-[35px] mt-1">
-                  <input
-                    type="text"
-                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
-                    {...register("password")}
-                    placeholder=""
-                  />
-                </div>
-                {errors.password?.message && (
-                  <div className="flex justify-end text-[12px] mt-[10px] font-bold">
-                    Input your last name
-                  </div>
-                )}
-              </div>
-            </div>
-            <div className="mt-5 flex justify-center items-center w-full">
-              <button
-                type="submit"
-                className="w-[90%] py-2 rounded-md bg-white text-green-400 font-[Ever] hover:shadow-lg transition-all duration-300 "
-              >
-                Signup
-              </button>
-            </div>
-            <div className="flex items-center mt-3 text-white">
-              Already have an account?{" "}
-              <Link to="/signin">
-                <div className="ml-2 text-red-600 underline">Signin</div>
-              </Link>
-            </div>
-          </motion.form>
-        </div>
-        {/* Desktop Screen */}
-        <div className="max-sm:hidden w-full bg-gradient-to-tr from-green-500 via-green-700 to-green-950 h-[100vh] flex justify-center items-center">
-          <div className="w-full h-[100vh] justify-between items-center flex ">
-            <div className="w-[55%] max-md:w-[90%] h-full flex items-center justify-end">
-              <div className="w-[90%] h-[60%] text-white  flex flex-col  ">
+        <div className="w-full bg-gradient-to-tr from-green-500 via-green-700 to-green-950 h-[110vh] flex justify-center items-center">
+          <div className="w-full h-full justify-between items-center flex ">
+            <div className="w-[55%] max-sm:w-full max-md:w-full h-full flex items-center justify-end">
+              <div className="w-[90%] h-[90%] text-white  flex flex-col  ">
                 <div className="font-bold uppercase text-sm my-1">
                   Get Started for Free
                 </div>
                 <div className="text-3xl font-bold my-1">
                   Create new account
+                </div>
+                <div className="w-full h-[150px]  flex items-center ">
+                  <div className="relative">
+                    <label htmlFor="mobileImage">
+                      <div className="absolute bottom-0 right-2 px-[6px] py-[6px] rounded-full bg-black transition-all duration-500 hover:bg-gray-600 hover:cursor-pointer">
+                        <IoCamera className="text-2xl text-white" />
+                      </div>
+                    </label>
+                    <input
+                      type="file"
+                      id="mobileImage"
+                      hidden
+                      onChange={onHandleImage}
+                    />
+                    <img
+                      src={avatar ? avatar : image}
+                      alt=""
+                      className="w-[120px] h-[120px] rounded-full object-cover bg-white ml-3    "
+                    />
+                  </div>
                 </div>
                 <Link to="/signin">
                   <div className="flex items-center text-sm  my-2 font-bold">
@@ -286,7 +216,7 @@ const RegisterScreen = () => {
                       className="px-5 py-2 rounded-lg bg-white text-green-500 hover:shadow-lg"
                       type="submit"
                     >
-                      Create account
+                      {state ? <IsLoadingButton /> : "Create Account"}
                     </button>
                   </div>
                 </motion.form>
