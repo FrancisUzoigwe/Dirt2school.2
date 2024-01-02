@@ -1,6 +1,21 @@
 import axios from "axios";
+// import { useSelector } from "react-redux";
 
 const url: string = "http://localhost:2345";
+
+// export const fetchApi = async (studentID: any) => {
+//   const user = useSelector((state: any) => state.mainStudent?.email);
+//   console.log(user);
+//   try {
+//     return await axios
+//       .get(`${url}/api/get-one${studentID}`)
+//       .then((res: any) => {
+//         return res.data;
+//       });
+//   } catch (error: any) {
+//     console.log(error?.message);
+//   }
+// };
 
 export const registerApi = async (data: any) => {
   try {

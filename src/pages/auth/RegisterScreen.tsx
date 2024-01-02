@@ -44,8 +44,8 @@ const RegisterScreen = () => {
     registerApi(myForm).then((res: any) => {
       console.log("Checking response: ", res);
       navigate("/signin");
+      setState(false);
     });
-    setState(false);
   });
 
   const useAnimate = {

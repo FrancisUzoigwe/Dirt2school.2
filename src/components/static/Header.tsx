@@ -9,6 +9,9 @@ import { dropped } from "../../global/globalState";
 const Header = () => {
   const dispatch = useDispatch();
   const drop = useSelector((state: any) => state.dropDown);
+  const userFirst = useSelector((state: any) => state.student?.firstName);
+  const userLast = useSelector((state: any) => state.student?.lastName);
+  const userImage = useSelector((state: any) => state.student?.image);
   return (
     <>
       {drop && <DropDown />}
@@ -22,7 +25,7 @@ const Header = () => {
             </header>
             <header className="hidden max-sm:flex items-center justify-between ">
               <img
-                // src={vite}
+                src={userImage}
                 alt=""
                 className="w-[50px] h-[50px] rounded-full border mr-2 object-cover"
               />
@@ -30,7 +33,10 @@ const Header = () => {
                 <div className="text-[12px] flex items-center ">
                   Welcome back <div className="text-sm">🎉</div>
                 </div>
-                <div className="font-bold">Francis Uzoigwe</div>
+                <div className="flex items-center">
+                  <div className="font-bold">{userFirst}</div>
+                  <div className="font-bold ml-1">{userLast}</div>
+                </div>
               </div>
             </header>
             <Profile />

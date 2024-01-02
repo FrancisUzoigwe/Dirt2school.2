@@ -1,8 +1,11 @@
 import { useState } from "react";
-// import { Fade } from "react-awesome-reveal";
-// import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
+  const userFirst = useSelector((state: any) => state.student?.firstName);
+  const userLast = useSelector((state: any) => state.student?.lastName);
+  const userEmail = useSelector((state: any) => state.student?.email);
+  const userImage = useSelector((state: any) => state.student?.image);
   const [profile, setProfile] = useState<boolean>(false);
   const onProfile = () => {
     setProfile(!profile);
@@ -17,13 +20,16 @@ const Profile = () => {
       onMouseLeave={onProfile}
     >
       <img
-        // src={vite}
+        src={userImage}
         alt=""
         className="w-[50px] h-[50px] rounded-full border object-cover"
       />
       <div className=" ml-4 leading-tight">
-        <div className="font-bold">Francis Uzoigwe</div>
-        <div className="text-[13px]">Afara Technical School</div>
+        <div className="font-bold flex items-center">
+          <div className="font-bold">{userFirst}</div>
+          <div className="font-bold ml-1">{userLast}</div>
+        </div>
+        <div className="text-[13px]">{userEmail}</div>
       </div>
       {/* {profile ? (
         <Fade>
