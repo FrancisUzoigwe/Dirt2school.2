@@ -9,6 +9,10 @@ import ProfileScreen from "../pages/screen/ProfileScreen";
 import SettingScreen from "../pages/screen/SettingScreen";
 import PrivateRoute from "./PrivateRoute";
 import EmailScreen from "../pages/auth/EmailScreen";
+import AdminLayout from "../components/common/AdminLayout";
+import AdminScreen from "../pages/admin/AdminScreen";
+import AdminDetailedScreen from "../pages/admin/AdminDetailedScreen";
+import AdminHistory from "../pages/admin/AdminHistory";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -54,6 +58,24 @@ export const mainRouter = createBrowserRouter([
       {
         path: "/auth/settings",
         element: <SettingScreen />,
+      },
+    ],
+  },
+  {
+    path: "/adminroute",
+    element: <AdminLayout />,
+    children: [
+      {
+        index: true,
+        element: <AdminScreen />,
+      },
+      {
+        path: "/adminroute/detail",
+        element: <AdminDetailedScreen />,
+      },
+      {
+        path: "/adminroute/history",
+        element: <AdminHistory />,
       },
     ],
   },
