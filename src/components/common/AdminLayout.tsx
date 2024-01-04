@@ -10,7 +10,7 @@ const AdminLayout = () => {
       <div className="w-full">
         <AdminHeader />
         <div className="flex w-full h-full justify-between ">
-          <div className={`${adminTog ? "w-[150px]" : "w-[80px]"} bg-green-400`}>
+          <div className={`${adminTog ? "w-[150px]" : "w-[50px]"} bg-green-400`}>
             <AdminSider />
           </div>
           <div className="bg-green-300 w-full px-[2px]">

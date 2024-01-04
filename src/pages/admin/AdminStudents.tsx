@@ -4,10 +4,9 @@ import { detailToggle } from "../../global/globalState";
 interface iStudent {
   name?: string;
   email?: string;
-  price?: string;
 }
 
-export const Students: React.FC<iStudent> = ({ name, email, price }) => {
+export const Students: React.FC<iStudent> = ({ name, email }) => {
   const dispatch = useDispatch();
   return (
     <>
@@ -24,13 +23,12 @@ export const Students: React.FC<iStudent> = ({ name, email, price }) => {
             className="object-cover w-full h-full rounded-full"
           />
         </div>
-        <div className="font-bold text-white max-sm:text-[13px]">
+        <div className="font-bold text-white max-sm:text-[13px] mt-2">
           {name}Francis Uzoigwe
         </div>
         <div className="text-[12px] font-bold max-sm:text-[10px]">
           {email}kossyuzoigwe@gmail.com
         </div>
-        <div className="font-bold text-white">₦{price}2000</div>
       </div>
     </>
   );

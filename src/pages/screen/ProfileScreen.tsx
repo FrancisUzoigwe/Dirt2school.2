@@ -1,4 +1,3 @@
-import { CiEdit } from "react-icons/ci";
 import {
   MdMarkEmailRead,
   MdAccountBalance,
@@ -8,16 +7,10 @@ import { BsFillPhoneFill } from "react-icons/bs";
 import { FaRegAddressCard } from "react-icons/fa6";
 import { SiGoogleclassroom } from "react-icons/si";
 import { IoSchoolSharp } from "react-icons/io5";
-import ResetPassword from "./ResetPassword";
-import { useDispatch, useSelector } from "react-redux";
-import { resetToggled } from "../../global/globalState";
 
 const ProfileScreen = () => {
-  const resetPage = useSelector((state: any) => state.reset);
-  const dispatch = useDispatch();
   return (
     <>
-      {resetPage && <ResetPassword />}
       <div className="w-full min-h-[100vh] bg-green-400 flex justify-center">
         <div className=" w-[95%] h-full justify-center">
           <div className="w-full h-full  mt-2 rounded-lg flex flex-col items-center ">
@@ -37,17 +30,6 @@ const ProfileScreen = () => {
                 <div className="font-bold text-[16px]">Profile</div>
                 {/* <ResetPassword/> */}
                 {/* <Link to="/auth/settings"> */}
-                <div
-                  className="flex items-center hover:cursor-pointer font-bold"
-                  onClick={() => {
-                    dispatch(resetToggled());
-                  }}
-                >
-                  Reset Password
-                  <div>
-                    <CiEdit className="text-xl" />
-                  </div>
-                </div>
                 {/* </Link> */}
               </div>
               <div className="w-full h-auto my-3 bg-white mt-4 rounded-md">

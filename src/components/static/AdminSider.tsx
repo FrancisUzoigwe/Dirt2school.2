@@ -15,10 +15,10 @@ const AdminSider = () => {
   };
   return (
     <>
-      <div className={`${adminTog ? "w-[150px]" : "w-[80px]"}  h-full`}>
+      <div className={`${adminTog ? "w-[150px]" : "w-[50px]"}  h-full`}>
         <div
           className={`${
-            adminTog ? "w-[150px]" : "w-[80px]"
+            adminTog ? "w-[150px]" : "w-[50px]"
           } h-full  flex flex-col fixed`}
         >
           <div
@@ -47,10 +47,10 @@ const AdminSider = () => {
           <div className="flex items-center justify-center my-5 ">
             <Link to="/adminroute">
               <div className="flex justify-center items-center font-bold">
-                Students
+              <PiStudentFill className="text-2xl" />
                 {adminTog && (
                   <div className="ml-2">
-                    <PiStudentFill className="text-2xl" />
+                Students
                   </div>
                 )}
               </div>
@@ -60,10 +60,10 @@ const AdminSider = () => {
           <div className="flex items-center justify-center my-5 ">
             <Link to="/adminroute/history">
               <div className="flex justify-center items-center font-bold">
-                Histories
+              <MdOutlineManageHistory className="text-2xl" />
                 {adminTog && (
                   <div className="ml-2">
-                    <MdOutlineManageHistory className="text-2xl" />
+                   Histories
                   </div>
                 )}
               </div>
