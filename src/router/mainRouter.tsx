@@ -13,6 +13,8 @@ import AdminLayout from "../components/common/AdminLayout";
 import AdminScreen from "../pages/admin/AdminScreen";
 import AdminDetailedScreen from "../pages/admin/AdminDetailedScreen";
 import AdminHistory from "../pages/admin/AdminHistory";
+import AdminRegister from "../pages/admin/AdminRegister";
+import AdminSignin from "../pages/admin/AdminSignin";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ export const mainRouter = createBrowserRouter([
   {
     path: "/signin",
     element: <SigninScreen />,
+  },
+  {
+    path: "/adminregister",
+    element: <AdminRegister />,
+  },
+  {
+    path: "/adminsignin",
+    element: <AdminSignin />,
   },
   {
     path: "/email",

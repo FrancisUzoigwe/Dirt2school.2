@@ -17,17 +17,17 @@ const DropDown = () => {
         initial="hidden"
         animate="visible"
         className="fixed top-2 right-0 w-full h-[200px] flex justify-center items-center z-[600]"
-        // style={{ backdropFilter: "blur(10px)" }}
       >
-        <div className="w-[98%] h-full bg-white rounded-md flex flex-col items-center">
-          <div className="mt-3 ">
+        <div className="w-[98%] h-full bg-white rounded-md flex flex-col items-center relative">
+          <div className="mt-3 absolute  top-0 right-2">
             <AiOutlineClose
-              className="text-2xl hover:scale-125 transition-all duration-300  hover:cursor-pointer"
+              className="text-2xl hover:scale-125 transition-all duration-300  hover:cursor-pointer font-bold "
               onClick={() => {
                 dispatch(changedDrop());
               }}
             />
           </div>
+          <div className="my-3"></div>
           <Link to="/auth/profile">
             <div
               className="my-2 font-bold hover:scale-105 transition-all duration-300"

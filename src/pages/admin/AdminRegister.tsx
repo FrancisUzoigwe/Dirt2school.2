@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { MdContactMail } from "react-icons/md";
 import { IoCamera, IoMail } from "react-icons/io5";
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import auth from "../../assets/Erased.png";
 import { useNavigate } from "react-router-dom";
 import vite from "../../../public/vite.svg";
@@ -17,10 +16,9 @@ const AdminRegister = () => {
   const navigate = useNavigate();
 
   const Register = yup.object({
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
-    email: yup.string().required(),
-    password: yup.string().required(),
+    adminName: yup.string().required(),
+    adminToken: yup.string().required(),
+    adminEmail: yup.string().required(),
   });
 
   const {
@@ -33,15 +31,9 @@ const AdminRegister = () => {
 
   const onHandleSubmit = handleSubmit(async (data) => {
     setState(true);
-    const { firstName, email, password, lastName } = data;
-    const myForm = new FormData();
-    myForm.append("firstName", firstName);
-    myForm.append("lastName", lastName);
-    myForm.append("email", email);
-    myForm.append("password", password);
-    myForm.append("avatar", image);
+    const { adminEmail, adminName, adminToken } = data;
 
-    registerApi(myForm).then((res: any) => {
+    registerApi({ adminEmail, adminName, adminToken }).then((res: any) => {
       console.log("Checking response: ", res);
       navigate("/signin");
       setState(false);
@@ -51,11 +43,6 @@ const AdminRegister = () => {
   const useAnimate = {
     visible: { x: 0, opacity: 1, transition: { delay: 0.5 } },
     hidden: { x: "-400px", opacity: 0 },
-  };
-
-  const [show, setShow] = useState<boolean>(false);
-  const onShow = () => {
-    setShow(!show);
   };
 
   const [image, setImage] = useState<string>("");
@@ -78,9 +65,7 @@ const AdminRegister = () => {
                 <div className="font-bold uppercase text-sm my-1">
                   Get Started for Free
                 </div>
-                <div className="text-3xl font-bold my-1">
-                  Create new account
-                </div>
+                <div className="text-3xl font-bold my-1">Welcome Admin</div>
                 <div className="w-full h-[150px]  flex items-center ">
                   <div className="relative">
                     <label htmlFor="mobileImage">
@@ -101,9 +86,9 @@ const AdminRegister = () => {
                     />
                   </div>
                 </div>
-                <Link to="/signin">
+                <Link to="/adminsignin">
                   <div className="flex items-center text-sm  my-2 font-bold">
-                    Already a member ? <div className="ml-[1px]">Signin</div>
+                    Already an admin ? <div className="ml-[1px]">Signin</div>
                   </div>
                 </Link>
                 <motion.form
@@ -114,9 +99,9 @@ const AdminRegister = () => {
                   onSubmit={onHandleSubmit}
                 >
                   <div className="w-full h-auto flex items-center justify-between">
-                    <div className="w-[46%] text-white rounded-md my-2  relative h-[55px] ">
+                    <div className="w-full text-white rounded-md my-2  relative h-[55px] ">
                       <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                        FirstName
+                        AdminName
                       </div>
                       <div className=" w-full h-[40px] mt-4 border-b relative">
                         <div className="absolute right-2">
@@ -125,34 +110,12 @@ const AdminRegister = () => {
                         <input
                           type="text"
                           className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
-                          {...register("firstName")}
-                          placeholder="John"
-                        />
-                      </div>
-
-                      {errors.firstName?.message && (
-                        <div className="flex justify-end text-sm  font-bold">
-                          Enter your first name
-                        </div>
-                      )}
-                    </div>
-                    <div className="w-[46%] text-white rounded-md my-2  relative h-[55px] ">
-                      <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                        LastName
-                      </div>
-                      <div className=" w-full h-[40px] mt-4 border-b relative">
-                        <div className="absolute right-2">
-                          <MdContactMail className="text-2xl" />
-                        </div>
-                        <input
-                          type="text"
-                          className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
-                          {...register("lastName")}
+                          {...register("adminName")}
                           placeholder="Doe"
                         />
                       </div>
 
-                      {errors.lastName?.message && (
+                      {errors.adminName?.message && (
                         <div className="flex justify-end text-sm  font-bold">
                           Enter your last name
                         </div>
@@ -161,7 +124,7 @@ const AdminRegister = () => {
                   </div>
                   <div className="w-full text-white rounded-md my-8  relative h-[55px] ">
                     <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                      Email
+                      AdminEmail
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
                       <div className="absolute right-2">
@@ -170,19 +133,19 @@ const AdminRegister = () => {
                       <input
                         type="text"
                         className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
-                        {...register("email")}
+                        {...register("adminEmail")}
                         placeholder="example@gmail.com"
                       />
                     </div>
-                    {errors.email?.message && (
+                    {errors.adminEmail?.message && (
                       <div className="flex justify-end text-sm  font-bold">
                         Enter your email address
                       </div>
                     )}
                   </div>
-                  <div className="w-full text-white rounded-md  relative h-[55px] ">
+                  {/* <div className="w-full text-white rounded-md  relative h-[55px] ">
                     <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                      Password
+                      Token
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
                       <div
@@ -210,7 +173,7 @@ const AdminRegister = () => {
                         Enter your email address
                       </div>
                     )}
-                  </div>
+                  </div> */}
                   <div className="w-full h-auto flex justify-center items-center mt-10">
                     <button
                       className="px-5 py-2 rounded-lg bg-white text-green-500 hover:shadow-lg"

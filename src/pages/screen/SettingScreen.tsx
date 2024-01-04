@@ -112,7 +112,7 @@ const SettingScreen = () => {
                 </div>
                 {errors.address?.message && (
                   <div className="flex justify-end text-[12px] mt-[2px] font-bold">
-                    Provide a valid physical address
+                    Provide an address
                   </div>
                 )}
               </div>
@@ -142,7 +142,7 @@ const SettingScreen = () => {
                   Bank.:{" "}
                 </div>
 
-                <select className="bg-green-400 border-none w-full h-full outline-none  pl-3">
+                <select className="bg-green-400 border-none w-full h-full outline-none overflow-hidden rounded-md pl-3">
                   <option value="">Select Bank</option>
                   <option value="">OPay Digital Service (OPay)</option>
                   <option value="">Kuda Bank</option>
@@ -151,7 +151,7 @@ const SettingScreen = () => {
                 </select>
                 {errors.bank?.message && (
                   <div className="flex justify-end text-[12px] mt-[2px] font-bold">
-                    Account holder name
+                    Select a bank
                   </div>
                 )}
               </div>

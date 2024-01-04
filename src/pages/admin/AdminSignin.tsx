@@ -20,8 +20,9 @@ const AdminSignin = () => {
   const resetPage = useSelector((state: any) => state.reset);
 
   const Signin = yup.object({
-    email: yup.string().required(),
-    password: yup.string().required(),
+    adminEmail: yup.string().required(),
+    token: yup.string().required(),
+    adminPassword: yup.string().required(),
   });
 
   const {
@@ -34,8 +35,8 @@ const AdminSignin = () => {
 
   const onHandleSubmit = handleSubmit(async (data) => {
     setState(true);
-    const { email, password } = data;
-    loginApi({ email, password })
+    const { adminEmail, adminPassword } = data;
+    loginApi({ adminEmail, adminPassword })
       .then((cred: any) => {
         dispatch(mainStudent(cred));
         console.log(cred);
@@ -67,10 +68,12 @@ const AdminSignin = () => {
                 <div className="font-bold uppercase text-sm my-1">
                   Continue with zero stress
                 </div>
-                <div className="text-3xl font-bold my-1">Welcome back</div>
-                <Link to="/register">
+                <div className="text-3xl font-bold my-1">
+                  Welcome back Admin
+                </div>
+                <Link to="/adminregister">
                   <div className="flex items-center text-sm  my-2 font-bold">
-                    Not a member ? <div className="ml-[1px]">Signup</div>
+                    Not an admin ? <div className="ml-[1px]">Signup</div>
                   </div>
                 </Link>
                 <div
@@ -91,7 +94,7 @@ const AdminSignin = () => {
                   <div className="w-full h-auto flex items-center justify-between"></div>
                   <div className="w-full text-white rounded-md my-8  relative h-[55px] ">
                     <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                      Email
+                      adminEmail
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
                       <div className="absolute right-2">
@@ -100,17 +103,37 @@ const AdminSignin = () => {
                       <input
                         type="text"
                         className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
-                        {...register("email")}
+                        {...register("adminEmail")}
                         placeholder="example@gmail.com"
                       />
                     </div>
-                    {errors.email?.message && (
+                    {errors.adminEmail?.message && (
                       <div className="flex justify-end text-sm  font-bold">
-                        Enter your email address
+                        Enter your adminEmail address
                       </div>
                     )}
                   </div>
                   <div className="w-full text-white rounded-md  relative h-[55px] ">
+                    <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
+                      Token
+                    </div>
+                    <div className=" w-full h-[40px] mt-4 border-b relative">
+                      <div className="hover:cursor-pointer absolute right-2"></div>
+                      <input
+                        type="text"
+                        className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
+                        {...register("token")}
+                        placeholder="***34"
+                      />
+                    </div>
+
+                    {errors.token?.message && (
+                      <div className="flex justify-end text-sm  font-bold">
+                       Enter token 
+                      </div>
+                    )}
+                  </div>
+                  <div className="w-full text-white rounded-md mt-6 relative h-[55px] ">
                     <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
                       Password
                     </div>
@@ -130,14 +153,14 @@ const AdminSignin = () => {
                       <input
                         type={`${show ? "text" : "password"}`}
                         className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
-                        {...register("password")}
+                        {...register("adminPassword")}
                         placeholder="eg. johndoe128@"
                       />
                     </div>
 
-                    {errors.password?.message && (
+                    {errors.adminPassword?.message && (
                       <div className="flex justify-end text-sm  font-bold">
-                        Enter your email address
+                        Enter your adminEmail address
                       </div>
                     )}
                   </div>
