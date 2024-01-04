@@ -70,7 +70,7 @@ export const mainRouter = createBrowserRouter([
         element: <AdminScreen />,
       },
       {
-        path: "/adminroute/detail",
+        path: "/adminroute/:studentID/detail",
         element: <AdminDetailedScreen />,
       },
       {

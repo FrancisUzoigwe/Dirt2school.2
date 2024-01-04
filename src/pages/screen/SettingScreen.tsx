@@ -11,7 +11,7 @@ const SettingScreen = () => {
     phoneNumber: yup.string().required(),
     address: yup.string().required(),
     accNumber: yup.string().required(),
-    accName: yup.string().required(),
+    bank: yup.string().required(),
     schoolName: yup.string().required(),
     schoolClass: yup.string().required(),
   });
@@ -137,19 +137,19 @@ const SettingScreen = () => {
                   </div>
                 )}
               </div>
-              <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
-                  Account Name.:{" "}
+              <div className="w-[47%]  rounded-md my-2 border relative h-[40px] ">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm ">
+                  Bank.:{" "}
                 </div>
-                <div className=" w-full h-[30px] mt-1">
-                  <input
-                    type="text"
-                    onPaste={handlePaste}
-                    className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-white"
-                    {...register("accName")}
-                  />
-                </div>
-                {errors.accName?.message && (
+
+                <select className="bg-green-400 border-none w-full h-full outline-none  pl-3">
+                  <option value="">Select Bank</option>
+                  <option value="">OPay Digital Service (OPay)</option>
+                  <option value="">Kuda Bank</option>
+                  <option value="">Gurantee Trusted Bank</option>
+                  <option value="">PalmPay Digital Service</option>
+                </select>
+                {errors.bank?.message && (
                   <div className="flex justify-end text-[12px] mt-[2px] font-bold">
                     Account holder name
                   </div>

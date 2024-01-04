@@ -1,21 +1,20 @@
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { changedDetailToggle } from "../../global/globalState";
 import { IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
-import React from "react";
-import logo from "./logo.svg";
 import { usePaystackPayment } from "react-paystack";
+import { useNavigate } from "react-router-dom";
 const AdminDetailedScreen = () => {
   const detailedVariant = {
     hidden: { opacity: 1, scale: 0 },
     visible: { scale: 1, transition: { duration: 0.5 }, opacity: 1 },
   };
 
-  const dispatch = useDispatch();
-
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
   const config: any = {
     reference: new Date().getTime().toString(),
-    email: "user@example.com",
+    email: "kossyuzoigwe@gmail.com",
     amount: 20000,
     publicKey: "pk_live_94202d87146f507395f1045612cc6d0ec3a4fd29",
   };
@@ -44,8 +43,11 @@ const AdminDetailedScreen = () => {
       >
         <div
           className=" top-3 right-3 hover:cursor-pointer absolute"
+          // onClick={() => {
+          //   dispatch(changedDetailToggle());
+          // }}
           onClick={() => {
-            dispatch(changedDetailToggle());
+            navigate("/adminroute");
           }}
         >
           <IoCloseSharp className="text-2xl hover:cursor-pointer transition-all duration-300 hover:scale-125" />
@@ -123,7 +125,7 @@ const AdminDetailedScreen = () => {
           <button
             className="my-3 px-4 py-2 rounded-md bg-white text-green-400"
             onClick={() => {
-              initializePayment(onSuccess, onclose);
+              initializePayment(onSuccess, onClose);
             }}
           >
             Credit Account

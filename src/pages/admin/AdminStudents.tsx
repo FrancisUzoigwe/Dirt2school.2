@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import { detailToggle } from "../../global/globalState";
+// import { useDispatch } from "react-redux";
+// import { detailToggle } from "../../global/globalState";
 
 interface iStudent {
   name?: string;
@@ -7,14 +7,14 @@ interface iStudent {
 }
 
 export const Students: React.FC<iStudent> = ({ name, email }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   return (
     <>
       <div
         className="flex h-[180px] border  flex-col items-center justify-center rounded-lg bg-green-500  hover:cursor-pointer transition-all duration-300 "
-        onClick={() => {
-          dispatch(detailToggle());
-        }}
+        // onClick={() => {
+        //   dispatch(detailToggle());
+        // }}
       >
         <div className="w-[80px] h-[80px] rounded-full border ">
           <img
