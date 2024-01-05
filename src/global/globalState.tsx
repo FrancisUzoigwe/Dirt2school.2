@@ -7,12 +7,19 @@ const initialState = {
   student: {} || null,
   dropDown: false,
   detail: false,
+  cashout: false,
 };
 
 const globalState: any = createSlice({
   name: "state",
   initialState,
   reducers: {
+    cashedOut: (state: any) => {
+      state.cashout = true;
+    },
+    changeCashout: (state: any) => {
+      state.cashout = false;
+    },
     detailToggle: (state: any) => {
       state.detail = true;
     },
@@ -54,6 +61,8 @@ const globalState: any = createSlice({
 
 export const {
   adminToggle,
+  changeCashout,
+  cashedOut,
   changedAdminToggle,
   userToggled,
   userChangedToggled,
