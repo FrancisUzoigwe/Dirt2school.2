@@ -16,9 +16,9 @@ const DropDown = () => {
         variants={resetVariant}
         initial="hidden"
         animate="visible"
-        className="fixed top-2 right-0 w-full h-[200px] flex justify-center items-center z-[600]"
+        className="fixed top-2  right-0 w-full h-[200px] flex justify-center items-center z-[600]"
       >
-        <div className="w-[98%] h-full bg-white rounded-md flex flex-col items-center relative">
+        <div className="w-[98%] h-full shadow-xl bg-white rounded-md flex flex-col items-center relative">
           <div className="mt-3 absolute  top-0 right-2">
             <AiOutlineClose
               className="text-2xl hover:scale-125 transition-all duration-300  hover:cursor-pointer font-bold "

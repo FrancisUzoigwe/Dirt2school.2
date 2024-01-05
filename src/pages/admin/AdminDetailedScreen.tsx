@@ -1,5 +1,5 @@
 // import { useDispatch } from "react-redux";
-import { changedDetailToggle } from "../../global/globalState";
+// import { changedDetailToggle } from "../../global/globalState";
 import { IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { usePaystackPayment } from "react-paystack";
@@ -27,8 +27,7 @@ const AdminDetailedScreen = () => {
     console.log("closed");
   };
 
-  // const PaystackHookExample = () => {
-  const initializePayment: any = usePaystackPayment(config);
+   const initializePayment: any = usePaystackPayment(config);
 
   return (
     <div

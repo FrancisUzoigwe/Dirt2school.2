@@ -70,7 +70,6 @@ const CardI = () => {
 const CardII = () => {
   const [price] = useState<number>(1000 || 2000 || 3000);
   const [history, setHistory] = useState<boolean>(false);
-  console.log(typeof setHistory);
 
   const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   return (
@@ -112,7 +111,6 @@ const HomeScreen = () => {
 
   const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   const [history, setHistory] = useState<boolean>(false);
-  console.log(typeof setHistory);
 
   return (
     <>
