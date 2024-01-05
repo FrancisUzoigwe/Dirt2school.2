@@ -10,14 +10,14 @@ const WithdrawScreen = () => {
   };
   return (
     <div
-      className="w-full h-screen fixed z-[100]  flex justify-center items-center text-black"
+      className="w-full h-screen top-0 left-0 right-0 fixed z-[100]  flex justify-center items-center text-black"
       style={{ backdropFilter: "blur(10px)" }}
     >
       <motion.div
         variants={cashVariant}
         initial="hidden"
         animate="visible"
-        className="text-white"
+        className=""
         onClick={() => {
           dispatch(changeCashout());
         }}
