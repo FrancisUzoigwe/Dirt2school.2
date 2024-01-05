@@ -80,7 +80,7 @@ const SettingScreen = () => {
           >
             <div className="w-full flex justify-between items-center my-2">
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-[#0e0d0d] text-sm">
                   Phone:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -99,7 +99,7 @@ const SettingScreen = () => {
                 )}
               </div>
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-[#0e0d0d] text-sm">
                   Address:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -119,7 +119,7 @@ const SettingScreen = () => {
             </div>
             <div className="w-full flex justify-between items-center my-2">
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-[#0e0d0d] text-sm">
                   Account No.:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -138,11 +138,11 @@ const SettingScreen = () => {
                 )}
               </div>
               <div className="w-[47%]  rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm ">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-[#0e0d0d] text-sm ">
                   Bank.:{" "}
                 </div>
 
-                <select className="bg-green-400 border-none w-full h-full outline-none overflow-hidden rounded-md pl-3">
+                <select className="bg-[#0e0d0d] border-none w-full h-full outline-none overflow-hidden rounded-md pl-3">
                   <option value="">Select Bank</option>
                   <option value="">OPay Digital Service (OPay)</option>
                   <option value="">Kuda Bank</option>
@@ -158,7 +158,7 @@ const SettingScreen = () => {
             </div>
             <div className="w-full flex justify-between items-center my-2">
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-[#0e0d0d] text-sm">
                   School.:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -177,7 +177,7 @@ const SettingScreen = () => {
                 )}
               </div>
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-green-400 text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-[#0e0d0d] text-sm">
                   Class.:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -200,7 +200,7 @@ const SettingScreen = () => {
             <div className="w-full h-auto flex justify-center items-center mt-5">
               <button
                 type="submit"
-                className=" bg-white text-green-400 rounded-md px-4 py-2 font-[Ever] text-[14px] hover:scale-105 transition-all duration-300 hover:shadow-md"
+                className=" bg-white text-[#0e0d0d] rounded-md px-4 py-2 font-[Ever] text-[14px] hover:scale-105 transition-all duration-300 hover:shadow-md"
               >
                 {loading ? <IsLoadingButton /> : "Update Profile"}
               </button>

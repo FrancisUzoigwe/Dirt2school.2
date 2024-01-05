@@ -11,7 +11,7 @@ import { IoSchoolSharp } from "react-icons/io5";
 const ProfileScreen = () => {
   return (
     <>
-      <div className="w-full min-h-[100vh] bg-green-400 flex justify-center">
+      <div className="w-full min-h-[100vh] bg-[#0e0d0d] flex justify-center">
         <div className=" w-[95%] h-full justify-center">
           <div className="w-full h-full  mt-2 rounded-lg flex flex-col items-center ">
             <div className="flex flex-col items-center w-full">
@@ -19,15 +19,15 @@ const ProfileScreen = () => {
                 <div className="w-[100px] h-[100px] rounded-full border border-gray-400 bg-white mt-2">
                   <img src="" alt="" className="w-full h-full rounded-full" />
                 </div>
-                <div className="font-bold my-1 text-white">
-                  Kossyrisochukwu Francis Uzoigwe
+                <div className="font-bold my-1 text-2xl text-white text-center">
+                  Francis Uzoigwe
                 </div>
-                <div className="text-[12px] font-bold text-gray-400 pb-5">
+                <div className="text-[12px] font-bold text-white pb-5">
                   kossyuzoigwe@gmail.com
                 </div>
               </div>
               <div className="w-full flex justify-between text-[13px]">
-                <div className="font-bold text-[16px]">Profile</div>
+                <div className="font-bold text-[16px] text-white">Profile</div>
                 {/* <ResetPassword/> */}
                 {/* <Link to="/auth/settings"> */}
                 {/* </Link> */}

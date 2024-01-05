@@ -52,21 +52,7 @@ const ResetPassword = () => {
               <AiOutlineCloseCircle />
             </div>
           </div>
-          {/* <div className="ml-3 relative w-[90%]  px-1 py-1">
-            <div className="ml-2 font-bold">Current Password: </div>
-            <div className="w-full">
-              <input
-                type="text"
-                className=" w-full h-full outline-none border-b-2 pl-2 "
-                {...register("currentPassword")}
-              />
-              {errors.currentPassword?.message && (
-                <div className="flex w-full justify-end items-center text-red-500">
-                  Enter current password
-                </div>
-              )}
-            </div>
-          </div> */}
+
           <div className="ml-3 relative w-[90%]  px-1 py-1">
             <div className="ml-2 font-bold">Email: </div>
             <div className="w-full">
