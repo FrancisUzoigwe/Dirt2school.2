@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import img from "../../assets/video (2160p).mp4";
 
 const Hero = () => {
@@ -45,7 +46,8 @@ const Hero = () => {
               More about us
             </button>
 
-            <button
+        <Link to="/register">
+        <button
               className="px-3 py-2 rounded-[4px] relative  justify-center items-center gap-1 hover:text-[black)] hover:before:translate-x-[105%]
 
         overflow-hidden before:transition-transform
@@ -58,6 +60,7 @@ const Hero = () => {
             >
               Get Started
             </button>
+        </Link>
           </div>
         </div>
       </div>
