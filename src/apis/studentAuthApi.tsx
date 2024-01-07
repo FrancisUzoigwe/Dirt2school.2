@@ -1,7 +1,8 @@
 import axios from "axios";
 // import { useSelector } from "react-redux";
 
-const url: string = "http://localhost:2345";
+const url: string = "https://dirt2school-app.onrender.com";
+// const url: string = "http://localhost:2345";
 
 // export const fetchApi = async (studentID: any) => {
 //   const user = useSelector((state: any) => state.mainStudent?.email);
