@@ -22,7 +22,7 @@ const Header = () => {
         <div className="w-full h-[70px] fixed flex items-center justify-center z-20  text-black bg-white">
           <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
             <div className="flex w-[100%] h-[100%] justify-between items-center">
-              <div className="">Waste</div>
+              <div className="">Dirt2School</div>
 
               <div className="flex gap-10 max-md:gap-6 md:text-[14px] sm:text-[14px] text-[16px] max-sm:hidden">
                 <Link
