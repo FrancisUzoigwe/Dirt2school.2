@@ -123,7 +123,7 @@ const HomeScreen = () => {
           <CardI />
           <CardII />
         </div>
-        <div className="font-[Ever] max-sm:hidden text-2xl font-bold mt-4 text-white">
+        <div className="font max-sm:hidden text-2xl font-bold mt-4 text-white">
           Recent Histories
         </div>
 
@@ -133,7 +133,7 @@ const HomeScreen = () => {
           </div>
         </div>
         <div className="w-[96%] flex items-center justify-center flex-col mt-3 ">
-          <div className="font-[Ever] font-bold max-sm:flex hidden text-black">
+          <div className="font font-bold max-sm:flex hidden text-black">
             Recent Histories
           </div>
           {history ? (

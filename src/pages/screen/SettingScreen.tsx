@@ -55,7 +55,7 @@ const SettingScreen = () => {
       {loading && <IsLoadingButton />}
       <div className="w-full min-h-[100vh] flex justify-center ">
         <div className=" w-full h-auto flex flex-col items-center ">
-          <div className="ml-3 my-10 uppercase font-[Ever]  font-bold">
+          <div className="ml-3 my-10 uppercase   font-bold">
             Edit Profile
           </div>
 
@@ -66,7 +66,7 @@ const SettingScreen = () => {
           >
             <div className="w-full flex justify-between items-center my-2">
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-white  text-black text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto  bg-white  text-black text-sm">
                   Phone:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -85,7 +85,7 @@ const SettingScreen = () => {
                 )}
               </div>
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-white text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto  bg-white text-sm">
                   Address:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -105,7 +105,7 @@ const SettingScreen = () => {
             </div>
             <div className="w-full flex justify-between items-center my-2">
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-white text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto  bg-white text-sm">
                   Account No.:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -124,7 +124,7 @@ const SettingScreen = () => {
                 )}
               </div>
               <div className="w-[47%]  rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-white text-sm ">
+                <div className=" absolute -my-[10px] ml-5 w-auto  bg-white text-sm ">
                   Bank.:{" "}
                 </div>
 
@@ -150,7 +150,7 @@ const SettingScreen = () => {
             </div>
             <div className="w-full flex justify-between items-center my-2">
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-white text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto  bg-white text-sm">
                   School.:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -169,7 +169,7 @@ const SettingScreen = () => {
                 )}
               </div>
               <div className="w-[47%] rounded-md my-2 border relative h-[40px] ">
-                <div className=" absolute -my-[10px] ml-5 w-auto font-[Ever] bg-white text-sm">
+                <div className=" absolute -my-[10px] ml-5 w-auto  bg-white text-sm">
                   Class.:{" "}
                 </div>
                 <div className=" w-full h-[30px] mt-1">
@@ -192,7 +192,7 @@ const SettingScreen = () => {
             <div className="w-full h-auto flex justify-center items-center mt-5">
               <button
                 type="submit"
-                className=" bg-black text-white shadow-lg rounded-md px-4 py-2 font-[Ever] text-[14px] hover:scale-105 transition-all duration-300 hover:shadow-md"
+                className=" bg-black text-white shadow-lg rounded-md px-4 py-2  text-[14px] hover:scale-105 transition-all duration-300 hover:shadow-md"
               >
                 {loading ? <IsLoadingButton /> : "Update Profile"}
               </button>
