@@ -3,10 +3,10 @@ import IsLoadingButton from "../../components/private/IsLoadingButton";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useSelector } from "react-redux";
 
 const SettingScreen = () => {
 
+  
   
   const [loading, setLoading] = useState<boolean>(false);
 
