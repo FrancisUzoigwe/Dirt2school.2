@@ -19,7 +19,7 @@ const Layout = () => {
         </div>
 
         <div className="w-full h-auto bg-white  flex items-center justify-center">
-          <div className="fixed h-[50%] w-[95%] flex items-end justify-center mt-10">
+          <div className="fixed h-[20%] w-[95%] flex items-end justify-center mt-10">
             <div className="flex w-full justify-end  ">
               <div className="bg-green-400 px-4 py-4 rounded-full animate-bounce hover:cursor-pointer">
                 <IoCallSharp className="text-2xl text-white " />
