@@ -6,6 +6,7 @@ const Hero = () => {
     <div
       id="home"
       className="w-full h-[600px] flex items-center justify-center relative"
+      style={{ backgroundAttachment: "fixed" , position: "static"}}
     >
       <div className="w-[90%] h-[100%] flex items-center justify-center">
         <video
@@ -46,9 +47,9 @@ const Hero = () => {
               More about us
             </button>
 
-        <Link to="/register">
-        <button
-              className="px-3 py-2 rounded-[4px] relative  justify-center items-center gap-1 hover:text-[black)] hover:before:translate-x-[105%]
+            <Link to="/register">
+              <button
+                className="px-3 py-2 rounded-[4px] relative  justify-center items-center gap-1 hover:text-[black)] hover:before:translate-x-[105%]
 
         overflow-hidden before:transition-transform
         before:duration-[1s] ease-in-out text-black before:bg-white before:absolute
@@ -57,10 +58,10 @@ const Hero = () => {
         hover:text-white border-[1px]
         border-[] bg-lime-500
          h-11 text-[13px] font-medium hidden max-sm:block"
-            >
-              Get Started
-            </button>
-        </Link>
+              >
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </div>
