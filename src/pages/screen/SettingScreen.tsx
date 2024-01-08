@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 const SettingScreen = () => {
 
   
-  
+
   const [loading, setLoading] = useState<boolean>(false);
 
   const Schema = yup.object({
@@ -195,7 +195,7 @@ const SettingScreen = () => {
             <div className="w-full h-auto flex justify-center items-center mt-5">
               <button
                 type="submit"
-                className=" bg-black text-white shadow-lg rounded-md px-4 py-2  text-[14px] hover:scale-105 transition-all duration-300 hover:shadow-md"
+                className=" bg-black text-white shadow-lg rounded-md px-4 py-2  text-[14px] hover:scale-105 transition-all duration-300 hover:shadow-md z-20"
               >
                 {loading ? <IsLoadingButton /> : "Update Profile"}
               </button>
