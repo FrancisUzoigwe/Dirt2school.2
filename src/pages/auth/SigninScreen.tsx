@@ -8,7 +8,7 @@ import ResetPassword from "../screen/ResetPassword";
 import { mainStudent, resetToggled } from "../../global/globalState";
 import { motion } from "framer-motion";
 import auth from "../../assets/Erased.png";
-import { IoMail } from "react-icons/io5";
+// import { IoMail } from "react-icons/io5";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useState } from "react";
 import IsLoadingButton from "../../components/private/IsLoadingButton";
@@ -94,9 +94,9 @@ const SigninScreen = () => {
                       Email
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
-                      <div className="absolute right-2">
+                      {/* <div className="absolute right-2">
                         <IoMail className="text-2xl" />
-                      </div>
+                      </div> */}
                       <input
                         type="text"
                         className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"

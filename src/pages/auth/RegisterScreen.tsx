@@ -4,8 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MdContactMail } from "react-icons/md";
-import { IoCamera, IoMail } from "react-icons/io5";
+// import { MdContactMail } from "react-icons/md";
+// import { IoCamera, IoMail } from "react-icons/io5";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import auth from "../../assets/Erased.png";
 import { useNavigate } from "react-router-dom";
@@ -84,9 +84,9 @@ const RegisterScreen = () => {
                 <div className="w-full h-[150px]  flex items-center ">
                   <div className="relative">
                     <label htmlFor="mobileImage">
-                      <div className="absolute bottom-0 right-2 px-[6px] py-[6px] rounded-full bg-black transition-all duration-500 hover:bg-gray-600 hover:cursor-pointer">
+                      {/* <div className="absolute bottom-0 right-2 px-[6px] py-[6px] rounded-full bg-black transition-all duration-500 hover:bg-gray-600 hover:cursor-pointer">
                         <IoCamera className="text-2xl text-white" />
-                      </div>
+                      </div> */}
                     </label>
                     <input
                       type="file"
@@ -119,9 +119,9 @@ const RegisterScreen = () => {
                         FirstName
                       </div>
                       <div className=" w-full h-[40px] mt-4 border-b relative">
-                        <div className="absolute right-2">
+                        {/* <div className="absolute right-2">
                           <MdContactMail className="text-2xl" />
-                        </div>
+                        </div> */}
                         <input
                           type="text"
                           className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
@@ -141,9 +141,9 @@ const RegisterScreen = () => {
                         LastName
                       </div>
                       <div className=" w-full h-[40px] mt-4 border-b relative">
-                        <div className="absolute right-2">
+                        {/* <div className="absolute right-2">
                           <MdContactMail className="text-2xl" />
-                        </div>
+                        </div> */}
                         <input
                           type="text"
                           className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
@@ -164,9 +164,9 @@ const RegisterScreen = () => {
                       Email
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
-                      <div className="absolute right-2">
+                      {/* <div className="absolute right-2">
                         <IoMail className="text-2xl" />
-                      </div>
+                      </div> */}
                       <input
                         type="text"
                         className="w-full pl-3 h-full outline-none border-none bg-transparent placeholder:text-gray-400"
