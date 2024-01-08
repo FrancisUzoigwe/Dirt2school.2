@@ -15,7 +15,7 @@ const Card = () => {
 
   const dispatch = useDispatch();
   return (
-    <div className="w-auto h-[200px] relative border  rounded-xl my-2 mx-1 bg-gradient-to-r from-black via-[#110f0f] to-[#1e1e1e]">
+    <div className="w-auto h-[200px] relative border  rounded-xl my-2 mx-1 bg-gradient-to-r from-black via-[#110f0f] to-[#3a3a3a]">
       <div className="m-4">
         <div className="relative">
           <div className="font-bold text-white text-2xl mt-2">Wallet:</div>
@@ -57,7 +57,7 @@ const Card = () => {
 };
 const CardI = () => {
   return (
-    <div className="w-auto h-[200px] border text-black bg-gradient-to-r from-black via-[#110f0f] to-[#1e1e1e] rounded-xl my-2 mx-1 first-letter: ">
+    <div className="w-auto h-[200px] border text-black bg-gradient-to-r  from-black via-[#110f0f] to-[#3a3a3a] rounded-xl my-2 mx-1 first-letter: ">
       <div className="m-4">
         <div className="font-bold text-2xl mt-2 text-white">Bags Brought:</div>
         <div className="text-3xl font-bold ml-3 hover:cursor-pointer text-white mt-2">
@@ -74,7 +74,7 @@ const CardII = () => {
 
   const data = [1, 2, 3, 4, 5, 6, 7, 9, 10];
   return (
-    <div className="w-auto overflow-y-auto max-lg:hidden bg-gradient-to-r from-black via-[#110f0f] to-[#1e1e1e]  h-[200px] border border-black rounded-xl my-2 mx-1 flex-col flex  items-center z-[50]">
+    <div className="w-auto overflow-y-auto max-lg:hidden bg-gradient-to-r  from-black via-[#110f0f] to-[#3a3a3a]  h-[200px] border border-black rounded-xl my-2 mx-1 flex-col flex  items-center z-[50]">
       <div className="w-full h-auto flex items-center justify-center  ">
         <div className="mt-5 font-bold underline hover:cursor-pointer fixed  font-Poppin text-white bg-black">
           Recent Histories

@@ -7,8 +7,13 @@ import { BsFillPhoneFill } from "react-icons/bs";
 import { FaRegAddressCard } from "react-icons/fa6";
 import { SiGoogleclassroom } from "react-icons/si";
 import { IoSchoolSharp } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const ProfileScreen = () => {
+  const userImage = useSelector((state: any) => state.student?.image);
+  const userEmail = useSelector((state: any) => state.student?.email);
+  const userFirstName = useSelector((state: any) => state.student?.firstName);
+  const userLastName = useSelector((state: any) => state.student?.lastName);
   return (
     <>
       <div className="w-full min-h-[100vh] bg-white flex justify-center">
@@ -17,14 +22,17 @@ const ProfileScreen = () => {
             <div className="flex flex-col items-center w-full">
               <div className="flex flex-col items-center w-full">
                 <div className="w-[100px] h-[100px] rounded-full border border-gray-400 bg-white mt-2">
-                  <img src="" alt="" className="w-full h-full rounded-full" />
+                  <img
+                    src={userImage}
+                    alt=""
+                    className="w-full h-full rounded-full object-cover"
+                  />
                 </div>
-                <div className="font-bold my-1 text-2xl  text-center">
-                  Francis Uzoigwe
+                <div className="font-bold my-1 text-2xl  text-center flex">
+                  <div>{userFirstName}</div>
+                  <div className="ml-1">{userLastName}</div>
                 </div>
-                <div className="text-[12px] font-bold pb-5">
-                  kossyuzoigwe@gmail.com
-                </div>
+                <div className="text-[12px] font-bold pb-5">{userEmail}</div>
               </div>
               <div className="w-full flex justify-between text-[13px]">
                 <div className="font-bold text-[16px] ">Profile</div>
@@ -40,7 +48,7 @@ const ProfileScreen = () => {
                     </div>
                     <div className="ml-2">Email</div>
                   </div>
-                  <div className="underline">kossyuzoigwe@gmail.com</div>
+                  <div className="underline">{userEmail}</div>
                 </div>
                 <br />
                 <hr />

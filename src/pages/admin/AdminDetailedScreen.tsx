@@ -15,7 +15,7 @@ const AdminDetailedScreen = () => {
   const config: any = {
     reference: new Date().getTime().toString(),
     email: "kossyuzoigwe@gmail.com",
-    amount: 20000,
+    amount: 1000000,
     publicKey: "pk_live_94202d87146f507395f1045612cc6d0ec3a4fd29",
   };
 
