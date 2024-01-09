@@ -13,6 +13,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useState } from "react";
 import IsLoadingButton from "../../components/private/IsLoadingButton";
 import { loginApi } from "../../apis/studentAuthApi";
+import Swal from "sweetalert2";
 
 const SigninScreen = () => {
   const navigate = useNavigate();
@@ -35,15 +36,29 @@ const SigninScreen = () => {
   const onHandleSubmit = handleSubmit(async (data) => {
     setState(true);
     const { email, password } = data;
-    loginApi({ email, password })
-      .then((cred: any) => {
-        dispatch(mainStudent(cred));
-        console.log(cred);
-      })
-      .then(() => {
-        navigate("/auth");
-        setState(false);
-      });
+    loginApi({ email, password }).then((cred: any) => {
+      dispatch(mainStudent(cred));
+      if (cred) {
+        Swal.fire({
+          icon: "success",
+          text: "Successfully logged in",
+          timer: 4000,
+          timerProgressBar: true,
+        }).then(() => {
+          navigate("/auth");
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          text: "Error occured while signin",
+          timer: 4000,
+          timerProgressBar: true,
+          footer: "Why this error?",
+        }).then(() => {
+          navigate("/signin");
+        });
+      }
+    });
   });
 
   const useAnimate = {
@@ -62,7 +77,7 @@ const SigninScreen = () => {
       <div className="w-full min-h-[100vh] bg-green-400 flex flex-col">
         <div className=" w-full bg-gradient-to-tr from-green-500 via-green-700 to-green-950 h-[100vh] flex justify-center items-center">
           <div className="w-full h-[100vh] justify-between items-center flex ">
-            <div className="w-[55%] max-md:w-[90%] h-full flex items-center justify-end">
+            <div className="w-[55%] max-sm:w-full sm:w-full h-full flex items-center justify-end">
               <div className="w-[90%] h-[60%] text-white  flex flex-col  ">
                 <div className="font-bold uppercase text-sm my-1">
                   Continue with zero stress
@@ -90,8 +105,8 @@ const SigninScreen = () => {
                 >
                   <div className="w-full h-auto flex items-center justify-between"></div>
                   <div className="w-full text-white rounded-md my-8  relative h-[55px] ">
-                    <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                      Email
+                    <div className=" absolute mt-1 ml-5 w-auto   text-sm">
+                      Email:
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
                       {/* <div className="absolute right-2">
@@ -111,8 +126,8 @@ const SigninScreen = () => {
                     )}
                   </div>
                   <div className="w-full text-white rounded-md  relative h-[55px] ">
-                    <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                      Password
+                    <div className=" absolute mt-1 ml-5 w-auto   text-sm">
+                      Password:
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
                       <div
@@ -141,13 +156,18 @@ const SigninScreen = () => {
                       </div>
                     )}
                   </div>
-                  <div className="w-full h-auto flex justify-center items-center mt-10">
+                  <div className="w-full flex-col h-auto flex items-center mt-10">
                     <button
                       className="px-5 py-2 rounded-lg bg-white text-green-500 hover:shadow-lg"
                       type="submit"
                     >
                       {state ? <IsLoadingButton /> : "Signin Account"}
                     </button>
+                    {state && (
+                      <div className="animate-pulse mt-4 text-base">
+                        Please wait...This could take up to a minute 
+                      </div>
+                    )}
                   </div>
                 </motion.form>
               </div>

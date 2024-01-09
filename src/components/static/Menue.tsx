@@ -42,7 +42,7 @@ export default function App() {
         </motion.div>
       </motion.button>
       <motion.ul
-        className="bg-[#e2e2e2c5] flex flex-col items-center mt-3 w-[200px] px-1 py-1 "
+        className="bg-[#e2e2e2c5]  mt-3 w-[200px] px-1 py-1 "
         variants={{
           open: {
             clipPath: "inset(0% 0% 0% 0% round 10px)",
@@ -65,22 +65,6 @@ export default function App() {
         }}
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
       >
-        <Link to="/register">
-          <motion.li
-            variants={itemVariants}
-            className="py-2  px-1 hover:bg-white hover:text-black transition-all duration-300 cursor-pointer rounded-sm"
-          >
-            Register
-          </motion.li>
-        </Link>
-        <Link to="/signin">
-          <motion.li
-            variants={itemVariants}
-            className="py-2 px-1 hover:text-black transition-all duration-300  hover:bg-white cursor-pointer rounded-sm"
-          >
-            Signin
-          </motion.li>
-        </Link>
         <Link to="/">
           <motion.li
             variants={itemVariants}
@@ -89,17 +73,34 @@ export default function App() {
             Home{" "}
           </motion.li>
         </Link>
+        <Link to="/register">
+          <motion.li
+            variants={itemVariants}
+            className="py-2  px-1 hover:bg-white hover:text-black transition-all duration-300 cursor-pointer rounded-sm"
+          >
+            Register Account
+          </motion.li>
+        </Link>
+        <Link to="/signin">
+          <motion.li
+            variants={itemVariants}
+            className="py-2 px-1 hover:text-black transition-all duration-300  hover:bg-white cursor-pointer rounded-sm"
+          >
+            Signin Account
+          </motion.li>
+        </Link>
+
         <motion.li
           variants={itemVariants}
           className="py-2 px-1 hover:text-black transition-all duration-300 hover:bg-white cursor-pointer rounded-sm"
         >
-          About{" "}
+          About Us
         </motion.li>
         <motion.li
           variants={itemVariants}
           className="py-2 px-1 hover:text-black transition-all duration-300 hover:bg-white cursor-pointer rounded-sm"
         >
-          Services{" "}
+          Our Services{" "}
         </motion.li>
       </motion.ul>
     </motion.nav>

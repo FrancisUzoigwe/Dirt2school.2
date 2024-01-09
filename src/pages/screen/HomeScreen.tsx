@@ -136,7 +136,7 @@ const HomeScreen = () => {
           <div className="font font-bold max-sm:flex hidden text-black">
             Recent Histories
           </div>
-          {history ? (
+          {!history ? (
             <div className="flex flex-col items-center mt-5">
               <IoSettings className="text-9xl max-sm:text-8xl animate-bounce text-black transition-all duration-100 max-sm:mt-3" />
               <div className=" text-black">Histories would appear here</div>

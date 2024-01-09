@@ -9,9 +9,10 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import auth from "../../assets/Erased.png";
 import { useNavigate } from "react-router-dom";
-import vite from "../../../public/vite.svg";
+import vite from "../../../src/assets/profile.svg";
 import IsLoadingButton from "../../components/private/IsLoadingButton";
 import { registerApi } from "../../apis/studentAuthApi";
+import Swal from "sweetalert2";
 
 const RegisterScreen = () => {
   const navigate = useNavigate();
@@ -42,9 +43,29 @@ const RegisterScreen = () => {
     myForm.append("avatar", image);
 
     registerApi(myForm).then((res: any) => {
-      console.log("Checking response: ", res);
-      navigate("/signin");
-      setState(false);
+      // console.log("Checking response: ", res);
+      if (res) {
+        Swal.fire({
+          icon: "success",
+          text: `Your account has been created sucessfully`,
+          timer: 3000,
+          timerProgressBar: true,
+        }).then(() => {
+          navigate("/signin");
+          setState(false);
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          text: "Error occured while creating account",
+          footer: "Why this error?",
+          timerProgressBar: true,
+          timer: 3000,
+        }).then(() => {
+          navigate("/register");
+          setState(false);
+        });
+      }
     });
   });
 
@@ -97,7 +118,7 @@ const RegisterScreen = () => {
                     <img
                       src={avatar ? avatar : image}
                       alt=""
-                      className="w-[120px] h-[120px] rounded-full object-cover bg-white ml-3    "
+                      className="w-[120px] h-[120px] rounded-full  object-cover bg-white ml-3    "
                     />
                   </div>
                 </div>
@@ -115,8 +136,8 @@ const RegisterScreen = () => {
                 >
                   <div className="w-full h-auto flex items-center justify-between">
                     <div className="w-[46%] text-white rounded-md my-2  relative h-[55px] ">
-                      <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                        FirstName
+                      <div className=" absolute mt-1 ml-5 w-auto  text-sm">
+                        FirstName:
                       </div>
                       <div className=" w-full h-[40px] mt-4 border-b relative">
                         {/* <div className="absolute right-2">
@@ -137,8 +158,8 @@ const RegisterScreen = () => {
                       )}
                     </div>
                     <div className="w-[46%] text-white rounded-md my-2  relative h-[55px] ">
-                      <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                        LastName
+                      <div className=" absolute mt-1 ml-5 w-auto  text-sm">
+                        LastName:
                       </div>
                       <div className=" w-full h-[40px] mt-4 border-b relative">
                         {/* <div className="absolute right-2">
@@ -160,8 +181,8 @@ const RegisterScreen = () => {
                     </div>
                   </div>
                   <div className="w-full text-white rounded-md my-8  relative h-[55px] ">
-                    <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                      Email
+                    <div className=" absolute mt-1 ml-5 w-auto  text-sm">
+                      Email:
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
                       {/* <div className="absolute right-2">
@@ -181,8 +202,8 @@ const RegisterScreen = () => {
                     )}
                   </div>
                   <div className="w-full text-white rounded-md  relative h-[55px] ">
-                    <div className=" absolute mt-1 ml-5 w-auto font-[Ever]  text-sm">
-                      Password
+                    <div className=" absolute mt-1 ml-5 w-auto  text-sm">
+                      Password:
                     </div>
                     <div className=" w-full h-[40px] mt-4 border-b relative">
                       <div
@@ -211,13 +232,18 @@ const RegisterScreen = () => {
                       </div>
                     )}
                   </div>
-                  <div className="w-full h-auto flex justify-center items-center mt-10">
+                  <div className="w-full flex-col h-auto flex items-center mt-10">
                     <button
                       className="px-5 py-2 rounded-lg bg-white text-green-500 hover:shadow-lg"
                       type="submit"
                     >
                       {state ? <IsLoadingButton /> : "Create Account"}
                     </button>
+                    {state && (
+                      <div className="animate-pulse mt-4 text-base">
+                        Please wait...This could take up to a minute 
+                      </div>
+                    )}
                   </div>
                 </motion.form>
               </div>
