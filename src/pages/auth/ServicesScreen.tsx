@@ -6,7 +6,7 @@ const ServicesScreen = () => {
   return (
     <div
       id="services"
-      className="w-full flex py-5 items-center justify-center "
+      className="w-full flex my-8 items-center justify-center "
     >
       <div className="w-[90%] py-2 flex items-center justify-between max-sm:w-[100%] max-sm:flex-col ">
         <div className="py-2 flex gap-4 w-[30%] max-md:w-[40%] max-sm:w-[90%]">

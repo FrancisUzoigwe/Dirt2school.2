@@ -1,10 +1,9 @@
 import img from "../../assets/Children.webp";
-
 const CompanyScreen = () => {
   return (
     <div id="company" className="w-full flex items-center justify-center">
       <div className="w-[90%] flex items-center justify-between max-sm:flex-col-reverse">
-        <div className="w-[50%] max-sm:w-[100%]">
+        <div className=" w-[50%] max-sm:w-[100%]">
           <h2 className="text-[30px] max-sm:text-[24px] max-md:text-[26px] font-bold">
             Our Commitment
           </h2>
@@ -27,7 +26,7 @@ const CompanyScreen = () => {
 
         px-2 h-10 text-[13px] font-max-md max-sm:hidden"
           >
-            send us a message
+            Send us a message
           </button>
         </div>
 

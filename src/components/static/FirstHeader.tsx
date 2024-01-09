@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-scroll/modules";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/dirt2school.png";
 import Menue from "./Menue";
 
 const Header = () => {
@@ -19,10 +20,15 @@ const Header = () => {
   return (
     <div>
       {show ? (
-        <div className="w-full h-[70px] fixed flex items-center justify-center z-20  text-black bg-white">
+        <div className="w-full h-[70px]  shadow-sm fixed flex items-center justify-center z-20  text-black bg-white">
           <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
             <div className="flex w-[100%] h-[100%] justify-between items-center">
-              <div className="">Dirt2School</div>
+              <Link to="/">
+                <img
+                  className="w-[50px] h-[50px] object-contain hover:cursor-pointer"
+                  src={logo}
+                />
+              </Link>
 
               <div className="flex gap-10 max-md:gap-6 md:text-[14px] sm:text-[14px] text-[16px] max-sm:hidden">
                 <Link
@@ -118,7 +124,12 @@ const Header = () => {
         <div className="w-full h-[70px] fixed flex items-center justify-center z-20  text-white bg-transparent">
           <div className="w-[90%] h-[100%] flex items-center justify-center z-20 ">
             <div className="flex w-[100%] h-[100%] justify-between items-center">
-              <div className="">Dirt2School</div>
+              <Link to="/">
+                <img
+                  className="w-[50px] h-[50px] object-contain hover:cursor-pointer"
+                  src={logo}
+                />
+              </Link>
 
               <div className="flex gap-10 max-md:gap-6 md:text-[14px] sm:text-[14px] text-[16px] max-sm:hidden">
                 <Link
