@@ -4,8 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-// import { MdContactMail } from "react-icons/md";
-// import { IoCamera, IoMail } from "react-icons/io5";
+
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import auth from "../../assets/Erased.png";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +16,10 @@ import Swal from "sweetalert2";
 const RegisterScreen = () => {
   const navigate = useNavigate();
 
+  const useAnimate = {
+    visible: { x: 0, opacity: 1, transition: { delay: 0.5 } },
+    hidden: { x: "-400px", opacity: 0 },
+  };
   const Register = yup.object({
     firstName: yup.string().required(),
     lastName: yup.string().required(),
@@ -69,7 +72,7 @@ const RegisterScreen = () => {
     });
   });
 
-  const useAnimate = {
+  const useLoadingAnimate = {
     visible: { x: 0, opacity: 1, transition: { delay: 0.5 } },
     hidden: { x: "-400px", opacity: 0 },
   };
@@ -240,9 +243,14 @@ const RegisterScreen = () => {
                       {state ? <IsLoadingButton /> : "Create Account"}
                     </button>
                     {state && (
-                      <div className="animate-pulse mt-4 text-base">
-                        Please wait...This could take up to a minute 
-                      </div>
+                      <motion.div
+                        variants={useLoadingAnimate}
+                        animate="visible"
+                        initial="hidden"
+                        className="animate-pulse mt-4 text-base text-center"
+                      >
+                        Please wait...This could take up to a minute
+                      </motion.div>
                     )}
                   </div>
                 </motion.form>

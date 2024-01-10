@@ -8,7 +8,6 @@ import ResetPassword from "../screen/ResetPassword";
 import { mainStudent, resetToggled } from "../../global/globalState";
 import { motion } from "framer-motion";
 import auth from "../../assets/Erased.png";
-// import { IoMail } from "react-icons/io5";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { useState } from "react";
 import IsLoadingButton from "../../components/private/IsLoadingButton";
@@ -169,7 +168,7 @@ const SigninScreen = () => {
                     </button>
                     {state && (
                       <motion.div
-                        className="animate-pulse mt-4 text-base"
+                        className="animate-pulse mt-4 text-base text-center"
                         variants={useLoadAnimate}
                         animate="visible"
                         initial="hidden"
