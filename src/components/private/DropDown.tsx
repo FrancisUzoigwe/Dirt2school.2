@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { changedDrop, logOutStudent } from "../../global/globalState";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const DropDown = () => {
   const dispatch = useDispatch();
@@ -61,8 +62,15 @@ const DropDown = () => {
           <div
             className="my-2 font-bold hover:scale-105 transition-all z-[100] duration-300  hover:cursor-pointer"
             onClick={() => {
-              dispatch(logOutStudent());
-              dispatch(changedDrop());
+              Swal.fire({
+                text: "This should take a second",
+                icon: "success",
+                timer: 5000,
+                timerProgressBar: true,
+              }).then(() => {
+                dispatch(logOutStudent());
+                dispatch(changedDrop());
+              });
             }}
           >
             Logout

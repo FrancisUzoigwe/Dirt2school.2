@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import DropDown from "../private/DropDown";
 import { dropped } from "../../global/globalState";
 
+
 const Header = () => {
   const dispatch = useDispatch();
   const drop = useSelector((state: any) => state.dropDown);

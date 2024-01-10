@@ -10,6 +10,7 @@ import { RxDashboard } from "react-icons/rx";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Sider = () => {
   const [side, setSide] = useState<boolean>(false);
@@ -74,7 +75,16 @@ const Sider = () => {
             </Link>
             <div
               className="mt-56 flex items-center hover:scale-105 hover:cursor-pointer transition-all duration-300"
-              onClick={() => dispatch(logOutStudent())}
+              onClick={() =>
+                Swal.fire({
+                  text: "This should take a second",
+                  icon: "success",
+                  timer: 5000,
+                  timerProgressBar: true,
+                }).then(() => {
+                  dispatch(logOutStudent());
+                })
+              }
             >
               <RiLogoutCircleRLine className="text-3xl rotate-180 " />
               {!uToggle && <div className="ml-2 font-bold">Logout</div>}

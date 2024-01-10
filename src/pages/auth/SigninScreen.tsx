@@ -65,6 +65,10 @@ const SigninScreen = () => {
     visible: { x: 0, opacity: 1, transition: { delay: 0.5 } },
     hidden: { x: "-400px", opacity: 0 },
   };
+  const useLoadAnimate = {
+    visible: { x: 0, opacity: 1, transition: { delay: 0.5 } },
+    hidden: { x: "-400px", opacity: 0 },
+  };
 
   const [show, setShow] = useState<boolean>(false);
   const onShow = () => {
@@ -164,9 +168,14 @@ const SigninScreen = () => {
                       {state ? <IsLoadingButton /> : "Signin Account"}
                     </button>
                     {state && (
-                      <div className="animate-pulse mt-4 text-base">
-                        Please wait...This could take up to a minute 
-                      </div>
+                      <motion.div
+                        className="animate-pulse mt-4 text-base"
+                        variants={useLoadAnimate}
+                        animate="visible"
+                        initial="hidden"
+                      >
+                        Please wait...This could take up to a minute
+                      </motion.div>
                     )}
                   </div>
                 </motion.form>
