@@ -15,18 +15,18 @@ const AboutUsScreen = () => {
               About Us
             </h2>
             <br />
-            <p className="w-[80%] max-sm:w-[100%] max-md:w-[100%] text-center">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero,
-              corporis illum exercitationem autem cumque iste nisi culpa velit
-              blanditiis non modi reiciendis in labore sed, rerum veniam atque
-              accusantium architecto..
+            <p className="w-[80%] max-sm:w-[100%] max-md:w-[100%] ">
+              At Dirt to School, we are on a mission to redefine the narrative
+              surrounding waste disposal and education. Our journey is fueled by
+              a deep-seated commitment to improving lives through responsible
+              waste management and, more importantly, by using the
+              transformative power of recycling to make education accessible to
+              all.
             </p>
-            <br />
-            <p className="w-[80%] max-sm:w-[100%] max-md:w-[100%] text-center">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero,
-              corporis illum exercitationem autem cumque iste nisi culpa velit
-              blanditiis non modi reiciendis in labore sed, rerum veniam atque
-              accusantium architecto..
+            {/* <br /> */}
+            <p className="w-[80%] max-sm:w-[100%] max-md:w-[100%] ">
+              Be a part of the Dirt to School story — where we believe in
+              nurturing minds and transforming futures.
             </p>
 
             <br />

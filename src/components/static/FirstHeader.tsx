@@ -25,7 +25,7 @@ const Header = () => {
             <div className="flex w-[100%] h-[100%] justify-between items-center">
               <Link to="/">
                 <img
-                  className="w-[50px] h-[50px] object-contain hover:cursor-pointer"
+                  className="w-[40px] h-[40px] object-contain hover:cursor-pointer"
                   src={logo}
                 />
               </Link>
@@ -126,7 +126,7 @@ const Header = () => {
             <div className="flex w-[100%] h-[100%] justify-between items-center">
               <Link to="/">
                 <img
-                  className="w-[50px] h-[50px] object-contain hover:cursor-pointer"
+                  className="w-[40px] h-[40px] object-contain hover:cursor-pointer"
                   src={logo}
                 />
               </Link>

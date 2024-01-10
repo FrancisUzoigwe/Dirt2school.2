@@ -8,10 +8,12 @@ const CompanyScreen = () => {
             Our Commitment
           </h2>
           <br />
-          <p className="w-[80%] max-sm:w-[100%] max-md:w-[100%]">
-            Focused on improving the quality of life through proper efficient
-            waste disposal,Dirt to school aim at using recycled plastic to send
-            students to school through our service.
+          <p className="w-[80%] max-sm:w-[100%] max-md:w-[100%] ">
+            At Dirt to School, we are driven by a profound commitment to
+            improving the quality of life through responsible and efficient
+            waste disposal. We believe in the transformative power of recycling,
+            and our mission is to leverage this power to make education
+            accessible to all.
           </p>
 
           <br />
